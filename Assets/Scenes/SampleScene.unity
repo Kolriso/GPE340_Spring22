@@ -156,6 +156,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   pawn: {fileID: 28097271}
   playerCamera: {fileID: 963194227}
+  sprintMultiplier: 10
 --- !u!114 &28097271
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -168,6 +169,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a8ae216bbc6a70349938c07439abb563, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  rb: {fileID: 28097272}
   moveSpeed: 1
   rotateSpeed: 360
 --- !u!54 &28097272

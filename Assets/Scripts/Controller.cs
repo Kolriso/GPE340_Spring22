@@ -6,6 +6,7 @@ public class Controller : MonoBehaviour
 {
     public Pawn pawn; // Created a Pawn variable to get access to the pawn
     public Camera playerCamera;
+    public float sprintMultiplier = 1.5f; // A variable to to calculate sprint speed
 
     // Start is called before the first frame update
     void Start()
@@ -22,6 +23,16 @@ public class Controller : MonoBehaviour
         moveVector = Vector3.ClampMagnitude(moveVector, 1.0f);
         // Tell the pawn to move
         pawn.Move(moveVector);
+
+        // A variable that makes a copy of the moveSpeed variable to prevent the normal speed from changing
+        float actualSpeed = pawn.moveSpeed;
+
+        if (Input.GetKey(KeyCode.LeftShift))
+        {
+            actualSpeed *= sprintMultiplier;
+        }
+
+        pawn.rb.MovePosition(transform.position + moveVector.normalized * actualSpeed * Time.deltaTime);
 
         // Rotate player to face the mouse
         RotateToMouse();

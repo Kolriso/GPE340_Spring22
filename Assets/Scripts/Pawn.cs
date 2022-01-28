@@ -4,13 +4,16 @@ using UnityEngine;
 
 public class Pawn : MonoBehaviour
 {
+    public Rigidbody rb; // Creating rigid body variable
     private Animator anim; // Creating an animator variable
     public float moveSpeed = 1; // Meters per second
     public float rotateSpeed = 360; // Degrees per second
+    
 
     // Start is called before the first frame update
     void Start()
     {
+        rb = GetComponent<Rigidbody>();
         anim = GetComponent<Animator>();
     }
 
