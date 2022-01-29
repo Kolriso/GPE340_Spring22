@@ -5,12 +5,14 @@ using UnityEngine;
 public class Controller : MonoBehaviour
 {
     public Pawn pawn; // Created a Pawn variable to get access to the pawn
-    public Camera playerCamera;
-    public float sprintMultiplier = 1.5f; // A variable to to calculate sprint speed
+    public Camera playerCamera; // A variable to hold the player's camera
+    private float sprint = 2.0f; // A variable to to calculate sprint speed
+    private float walk = 0.5f; // A varaible to calculate the walk speed
 
     // Start is called before the first frame update
     void Start()
     {
+        // An if statement to check whether or not a camera is hooked up
         if (playerCamera == null) Debug.LogWarning("Error: No camera set!");
     }
 
@@ -24,20 +26,25 @@ public class Controller : MonoBehaviour
         // Tell the pawn to move
         pawn.Move(moveVector);
 
-        // A variable that makes a copy of the moveSpeed variable to prevent the normal speed from changing
-        float actualSpeed = pawn.moveSpeed;
-
-        if (Input.GetKey(KeyCode.LeftShift))
+        // An if statement to see whether or not the left shift or Z button is being pressed or not in order to walk, run, or sprint
+        if (Input.GetKey(KeyCode.Z))
         {
-            actualSpeed *= sprintMultiplier;
+            pawn.moveSpeed = walk;
+        } 
+        else if (Input.GetKey(KeyCode.LeftShift))
+        {
+            pawn.moveSpeed = sprint;
         }
-
-        pawn.rb.MovePosition(transform.position + moveVector.normalized * actualSpeed * Time.deltaTime);
+        else
+        {
+            pawn.moveSpeed = 1.0f;
+        }
 
         // Rotate player to face the mouse
         RotateToMouse();
     }
 
+    // Allows the character to move in the direction of the mouse pointer
     void RotateToMouse()
     {
         // Create a plane object (a mathematical representation of all the point in 2D)
