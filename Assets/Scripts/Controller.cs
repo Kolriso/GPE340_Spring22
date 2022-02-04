@@ -4,10 +4,13 @@ using UnityEngine;
 
 public class Controller : MonoBehaviour
 {
+    [Header("Class Variables"), Tooltip("How to access things from other classes")]
     public Pawn pawn; // Created a Pawn variable to get access to the pawn
     public Camera playerCamera; // A variable to hold the player's camera
-    private float sprint = 2.0f; // A variable to to calculate sprint speed
-    private float walk = 0.5f; // A varaible to calculate the walk speed
+
+    [Header("Speed Variables"), Tooltip("The variables that hold the sprint and walk values")]
+    private float sprint = 2.0f; // The variable for the sprint value
+    private float walk = 0.5f; // The variable for the walk value
 
     // Start is called before the first frame update
     void Start()

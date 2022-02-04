@@ -4,8 +4,9 @@ using UnityEngine;
 
 public class CameraController : MonoBehaviour
 {
+    [Header("Class Variable"), Tooltip("How to access things from another class")]
     public Pawn player; // A variable to store a reference to the player game object
-
+    [Header("Vector3 Variable"), Tooltip("How to keep track of the distance between player and camera")]
     private Vector3 offset; // A variable to store the offset distance between the player and camera
 
     // Start is called before the first frame update
