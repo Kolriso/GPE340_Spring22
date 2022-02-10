@@ -1,0 +1,53 @@
+using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+using UnityEngine.Events;
+
+public class Health : MonoBehaviour
+{
+    [Header("Events")]
+    [SerializeField, Tooltip("Used every time the object is healed.")]
+    private UnityEvent onHeal;
+    [SerializeField, Tooltip("Used every time the object is takes damage.")]
+    private UnityEvent onDamage;
+    [SerializeField, Tooltip("Used only once and that is when health reaches 0.")]
+    private UnityEvent onDie;
+
+    [Header("Values")]
+    [SerializeField] private float maxHealth = 100.0f;
+    public float currentHealth;
+
+
+    // Start is called before the first frame update
+    void Start()
+    {
+        currentHealth = maxHealth;
+    }
+
+    // Update is called once per frame
+    void Update()
+    {
+        
+    }
+
+    public void takeDamage(float amountOfDamage)
+    {
+        // Call the onDamage event
+        onDamage.Invoke();
+
+        // Subtract the health here when damage is applied
+        currentHealth -= amountOfDamage;
+
+        // If our health <= 0, the player dies
+        if (currentHealth <= 0)
+        {
+            // Call the onDie event
+            onDie.Invoke();
+        }
+        else
+        {
+            // This here doesn't allow the health to go over max health
+            currentHealth = Mathf.Min(currentHealth, maxHealth);
+        }
+    }
+}

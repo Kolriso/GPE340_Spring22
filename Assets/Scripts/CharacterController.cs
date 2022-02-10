@@ -2,15 +2,15 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Controller : MonoBehaviour
+public class CharacterController : MonoBehaviour
 {
     [Header("Class Variables"), Tooltip("How to access things from other classes")]
     public Pawn pawn; // Created a Pawn variable to get access to the pawn
     public Camera playerCamera; // A variable to hold the player's camera
 
     [Header("Speed Variables"), Tooltip("The variables that hold the sprint and walk values")]
-    private float sprint = 2.0f; // The variable for the sprint value
-    private float walk = 0.5f; // The variable for the walk value
+    [SerializeField] private float sprint = 2.0f; // The variable for the sprint value
+    [SerializeField] private float walk = 0.5f; // The variable for the walk value
 
     // Start is called before the first frame update
     void Start()
@@ -24,8 +24,13 @@ public class Controller : MonoBehaviour
     {
         // Send my move command to my pawn
         Vector3 moveVector = new Vector3(Input.GetAxis("Horizontal"), 0, Input.GetAxis("Vertical"));
+
+        // Adjust this value, so that it's based on the direction the character's facing
+        moveVector = pawn.transform.InverseTransformDirection(moveVector);
+
         // Limit the vector magnitude to 1
         moveVector = Vector3.ClampMagnitude(moveVector, 1.0f);
+
         // Tell the pawn to move
         pawn.Move(moveVector);
 
