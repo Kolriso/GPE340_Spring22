@@ -27,7 +27,10 @@ public class Health : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+        if (Input.GetKeyDown(KeyCode.Space))
+        {
+            takeDamage(10);
+        }
     }
 
     public void takeDamage(float amountOfDamage)
@@ -49,5 +52,17 @@ public class Health : MonoBehaviour
             // This here doesn't allow the health to go over max health
             currentHealth = Mathf.Min(currentHealth, maxHealth);
         }
+    }
+
+    public void Healing(float amountToHeal)
+    {
+        // Call the onHeal event
+        onHeal.Invoke();
+
+        // Add to the current health when there is an amount to heal
+        currentHealth += amountToHeal;
+
+        // Make sure you don't go over the max health
+        currentHealth = Mathf.Min(currentHealth, maxHealth);
     }
 }
