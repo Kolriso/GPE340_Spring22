@@ -33,11 +33,16 @@ public class Weapons : MonoBehaviour
 
         if (isAutoFiring && countDown <= 0)
         {
-            // Call the shoot event
-            onShoot.Invoke();
+            // Shoot
+            Attack();
             // Reset the timer
             countDown = fireDelay;
         }
+    }
+
+    public void Attack()
+    {
+        onShoot.Invoke();
     }
 
     public void StartAutoFire()

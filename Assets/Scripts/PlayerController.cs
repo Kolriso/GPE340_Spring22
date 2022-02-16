@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class CharacterController : MonoBehaviour
+public class PlayerController : MonoBehaviour
 {
     [Header("Class Variables"), Tooltip("How to access things from other classes")]
     public Pawn pawn; // Created a Pawn variable to get access to the pawn
@@ -48,8 +48,31 @@ public class CharacterController : MonoBehaviour
             pawn.moveSpeed = 1.0f;
         }
 
+        // Read fire button inputs
+        GetButtonInputs();
+
         // Rotate player to face the mouse
         RotateToMouse();
+    }
+
+    private void GetButtonInputs()
+    {
+        if (Input.GetButtonDown("Fire1"))
+        {
+            pawn.weapon.onStartAttack.Invoke();
+        }
+        if (Input.GetButtonUp("Fire1"))
+        {
+            pawn.weapon.onEndAttack.Invoke();
+        }
+        if (Input.GetButtonDown("Fire2"))
+        {
+            pawn.weapon.onAlternateAttackStart.Invoke();
+        }
+        if (Input.GetButtonUp("Fire2"))
+        {
+            pawn.weapon.onAlternateAttackEnd.Invoke();
+        }
     }
 
     // Allows the character to move in the direction of the mouse pointer

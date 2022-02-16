@@ -9,7 +9,8 @@ public class Pawn : MonoBehaviour
     [Header("Movement Values"), Tooltip("The variables that hold the initial speed and the rotation speed")]
     public float moveSpeed = 1; // Meters per second
     public float rotateSpeed = 540; // Degrees per second
-    
+    [Header("Weapon")]
+    public Weapons weapon;
 
     // Start is called before the first frame update
     void Start()
@@ -22,6 +23,15 @@ public class Pawn : MonoBehaviour
     {
         
     }
+
+    public void EquipWeapon(GameObject weaponPrefabToEquip)
+    {
+        // Instantiate the weapon to equip
+        // Move it to the correct mounting point on the player
+        // Make it so the weapon's parent (transform.parent) is the correct part of the player
+        // Set this pawn so the new weapon is the weapon we use
+    }
+
     /// <summary>
     /// This is the function to get the animations hooked up for the movement of the pawn
     /// You take the moveVector parameter & multiply it by the move speed then set what axis the pawn will move on
