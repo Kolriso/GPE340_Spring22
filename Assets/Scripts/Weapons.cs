@@ -13,15 +13,45 @@ public class Weapons : MonoBehaviour
     public UnityEvent onAlternateAttackEnd;
     public UnityEvent onReload;
 
+    [Header("States")]
+    public bool isAutoFiring;
+    [Header("Data")]
+    public float fireDelay; // Seconds between shots
+    private float countDown;
+
     // Start is called before the first frame update
    public virtual void Start()
     {
-        
+        countDown = fireDelay;
     }
 
     // Update is called once per frame
     public virtual void Update()
     {
-        
+        // Subtract the time it took to play the last frame from our countdown
+        countDown -= Time.deltaTime;
+
+        if (isAutoFiring && countDown <= 0)
+        {
+            // Call the shoot event
+            onShoot.Invoke();
+            // Reset the timer
+            countDown = fireDelay;
+        }
+    }
+
+    public void StartAutoFire()
+    {
+        isAutoFiring = true;
+    }
+
+    public void EndAutoFire()
+    {
+        isAutoFiring = false;
+    }
+
+    public void ToggleAutoFire()
+    {
+        isAutoFiring = !isAutoFiring;
     }
 }
