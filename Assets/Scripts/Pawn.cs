@@ -11,6 +11,12 @@ public class Pawn : MonoBehaviour
     public float rotateSpeed = 540; // Degrees per second
     [Header("Weapon")]
     public Weapons weapon;
+    public Transform weaponMountPoint;
+    [Header("IK Controller")]
+    public Transform rightHandPoint;
+    public Transform leftHandPoint;
+    public float rightHandWeight;
+    public float leftHandWeight;
 
     // Start is called before the first frame update
     void Start()
@@ -24,12 +30,28 @@ public class Pawn : MonoBehaviour
         
     }
 
+    public void UnequipWeapon()
+    {
+        // Destroy the equiped weapon
+        Destroy(weapon.gameObject);
+
+        // Make sure the weapon variables is set to null
+        weapon = null;
+    }
+
     public void EquipWeapon(GameObject weaponPrefabToEquip)
     {
+        // Unequip the old weapon
+        UnequipWeapon();
+
         // Instantiate the weapon to equip
-        // Move it to the correct mounting point on the player
+        GameObject newWeapon = Instantiate(weaponPrefabToEquip, weaponMountPoint.position, weaponMountPoint.rotation);
+        
         // Make it so the weapon's parent (transform.parent) is the correct part of the player
+        newWeapon.transform.parent = weaponMountPoint;
+        
         // Set this pawn so the new weapon is the weapon we use
+        weapon = newWeapon.GetComponent<Weapons>();
     }
 
     /// <summary>
@@ -61,5 +83,20 @@ public class Pawn : MonoBehaviour
 
         // Change my rotation (slowly) towards that targeted roation
         transform.rotation = Quaternion.RotateTowards(transform.rotation, targetRotation, rotateSpeed * Time.deltaTime);
+    }
+
+    public void OnAnimatorIK(int layerIndex)
+    {
+        anim.SetIKPosition(AvatarIKGoal.RightHand, rightHandPoint.position);
+        anim.SetIKPosition(AvatarIKGoal.LeftHand, leftHandPoint.position);
+
+        anim.SetIKRotation(AvatarIKGoal.RightHand, rightHandPoint.rotation);
+        anim.SetIKRotation(AvatarIKGoal.LeftHand, leftHandPoint.rotation);
+
+        anim.SetIKPositionWeight(AvatarIKGoal.RightHand, rightHandWeight);
+        anim.SetIKPositionWeight(AvatarIKGoal.LeftHand, leftHandWeight);
+
+        anim.SetIKRotationWeight(AvatarIKGoal.RightHand, rightHandWeight);
+        anim.SetIKRotationWeight(AvatarIKGoal.LeftHand, leftHandWeight);
     }
 }
