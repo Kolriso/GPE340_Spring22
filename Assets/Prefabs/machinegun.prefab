@@ -215,7 +215,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 7860442304507728102}
         m_TargetAssemblyTypeName: M16, Assembly-CSharp
-        m_MethodName: ShootBullet
+        m_MethodName: ShootAutomatic
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -242,10 +242,34 @@ MonoBehaviour:
         m_CallState: 2
   onEndAttack:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 7860442304507728102}
+        m_TargetAssemblyTypeName: Weapons, Assembly-CSharp
+        m_MethodName: EndAutoFire
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   onAlternateAttackStart:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 7860442304507728102}
+        m_TargetAssemblyTypeName: M16, Assembly-CSharp
+        m_MethodName: ShootBullet
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   onAlternateAttackEnd:
     m_PersistentCalls:
       m_Calls: []
@@ -253,7 +277,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   isAutoFiring: 0
-  fireDelay: 0.01
+  fireDelay: 0.3
   countDown: 0
   damageDone: 10
   RHPoint: {fileID: 8853746732910401773}
