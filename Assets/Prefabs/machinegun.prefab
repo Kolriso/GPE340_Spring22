@@ -65,6 +65,8 @@ MonoBehaviour:
   fireDelay: 0
   countDown: 0
   damageDone: 0
+  RHPoint: {fileID: 0}
+  LHPoint: {fileID: 0}
   firePoint: {fileID: 0}
   projectilePrefab: {fileID: 0}
   projectileMoveSpeed: 0
@@ -98,6 +100,36 @@ Transform:
   m_Children: []
   m_Father: {fileID: 6172262052033618857}
   m_RootOrder: 3
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &4431218780375236829
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 5340271568597691323}
+  m_Layer: 0
+  m_Name: WeaponMountPoint
+  m_TagString: Untagged
+  m_Icon: {fileID: -5487077368411116049, guid: 0000000000000000d000000000000000, type: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &5340271568597691323
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4431218780375236829}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0.0001, y: 0.0002, z: -0.0472}
+  m_LocalScale: {x: 0.125, y: 0.125, z: 0.125}
+  m_Children: []
+  m_Father: {fileID: 6172262052033618857}
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &4933581778816338840
 GameObject:
@@ -162,6 +194,7 @@ Transform:
   - {fileID: 7099133110826886776}
   - {fileID: 6257482211586614348}
   - {fileID: 8853746732910401773}
+  - {fileID: 5340271568597691323}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -223,6 +256,8 @@ MonoBehaviour:
   fireDelay: 0.01
   countDown: 0
   damageDone: 10
+  RHPoint: {fileID: 8853746732910401773}
+  LHPoint: {fileID: 6257482211586614348}
   firePoint: {fileID: 7099133110826886776}
   projectilePrefab: {fileID: 344133592428297015, guid: f9ff84be915698243840779b3b366a5c, type: 3}
   projectileMoveSpeed: 8

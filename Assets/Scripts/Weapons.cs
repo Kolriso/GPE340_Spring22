@@ -19,6 +19,9 @@ public class Weapons : MonoBehaviour
     public float fireDelay; // Seconds between shots
     public float countDown;
     public float damageDone;
+    [Header("Hand Position")]
+    public Transform RHPoint;
+    public Transform LHPoint;
 
     // Start is called before the first frame update
    public virtual void Start()
