@@ -57,6 +57,8 @@ public class PlayerController : MonoBehaviour
 
     private void GetButtonInputs()
     {
+        if (pawn.weapon == null) return;
+
         if (Input.GetButtonDown("Fire1"))
         {
             pawn.weapon.onStartAttack.Invoke();

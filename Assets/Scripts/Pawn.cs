@@ -30,6 +30,8 @@ public class Pawn : MonoBehaviour
 
     public void UnequipWeapon()
     {
+        if (weapon == null) return;
+
         // Destroy the equiped weapon
         Destroy(weapon.gameObject);
 
