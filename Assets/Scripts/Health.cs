@@ -15,7 +15,7 @@ public class Health : MonoBehaviour
     private UnityEvent onDie;
 
     [Header("Values")]
-    [SerializeField] private float maxHealth = 1.0f;
+    [SerializeField] public float maxHealth = 1.0f;
     public float currentHealth;
 
     [Header("UI")]

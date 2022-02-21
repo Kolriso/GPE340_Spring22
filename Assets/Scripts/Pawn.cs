@@ -12,9 +12,6 @@ public class Pawn : MonoBehaviour
     [Header("Weapon")]
     public Weapons weapon;
     public Transform weaponMountPoint;
-    [Header("IK Controller")]
-    private float rightHandWeight = 1.0f;
-    private float leftHandWeight = 1.0f;
 
     // Start is called before the first frame update
     void Start()

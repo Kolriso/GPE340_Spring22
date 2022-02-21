@@ -30,7 +30,6 @@ public class Pistol : Weapons
 
     public void ShootBullet()
     {
-        print("Pistol Firing!");
         // Instantiate a bullet at the fire location of this rifle
         GameObject projectile = Instantiate(projectilePrefab, firePoint.position, firePoint.rotation) as GameObject;
         Projectile projectileScript = projectile.GetComponent<Projectile>();

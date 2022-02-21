@@ -42,7 +42,6 @@ public class Shotgun : Weapons
 
     public void ShotgunBlast()
     {
-        print("Shotgun firing!");
         int i = 0;
         foreach(Quaternion quat in pellets)
         {
