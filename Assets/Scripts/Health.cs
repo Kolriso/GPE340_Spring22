@@ -57,6 +57,8 @@ public class Health : MonoBehaviour
         {
             // Call the onDie event
             onDie.Invoke();
+
+            Destroy(this);
         }
         else
         {

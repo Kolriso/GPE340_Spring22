@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 7290304218011425265}
   - component: {fileID: 3870306171314646187}
   - component: {fileID: 7813134515040791173}
+  - component: {fileID: 1552706424670831139}
   m_Layer: 0
   m_Name: ammo_pistol
   m_TagString: Untagged
@@ -66,6 +67,19 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
+--- !u!65 &1552706424670831139
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7290304218011649489}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.01, y: 0.01, z: 0.01}
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &7290304218011649491
 GameObject:
   m_ObjectHideFlags: 0
