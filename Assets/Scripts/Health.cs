@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
+using UnityEngine.UI;
 
 public class Health : MonoBehaviour
 {
@@ -14,9 +15,12 @@ public class Health : MonoBehaviour
     private UnityEvent onDie;
 
     [Header("Values")]
-    [SerializeField] private float maxHealth = 100.0f;
+    [SerializeField] private float maxHealth = 1.0f;
     public float currentHealth;
 
+    [Header("UI")]
+    public Image healthBarImage;
+    public Pawn player;
 
     // Start is called before the first frame update
     void Start()
@@ -29,8 +33,13 @@ public class Health : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.Space))
         {
-            takeDamage(10);
+            takeDamage(10.0f);
         }
+    }
+
+    public void UpdateHealthBar()
+    {
+        healthBarImage.fillAmount = Mathf.Clamp(currentHealth / maxHealth, 0, 1.0f);
     }
 
     public void takeDamage(float amountOfDamage)
@@ -40,6 +49,8 @@ public class Health : MonoBehaviour
 
         // Subtract the health here when damage is applied
         currentHealth -= amountOfDamage;
+
+        UpdateHealthBar();
 
         // If our health <= 0, the player dies
         if (currentHealth <= 0)
@@ -64,5 +75,7 @@ public class Health : MonoBehaviour
 
         // Make sure you don't go over the max health
         currentHealth = Mathf.Min(currentHealth, maxHealth);
+
+        UpdateHealthBar();
     }
 }

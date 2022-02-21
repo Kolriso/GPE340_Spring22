@@ -2021,6 +2021,8 @@ MonoBehaviour:
         m_CallState: 2
   maxHealth: 100
   currentHealth: 0
+  healthBarImage: {fileID: 0}
+  player: {fileID: 574550744091725691}
 --- !u!114 &574550744091725691
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2035,7 +2037,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   moveSpeed: 1
   rotateSpeed: 540
-  weapon: {fileID: 7860442304507728102, guid: 6687c864db08b5c4baeca41cbff0bef8, type: 3}
+  weapon: {fileID: 0}
   weaponMountPoint: {fileID: 3550965519800829334}
 --- !u!114 &1952565398404694454
 MonoBehaviour:
