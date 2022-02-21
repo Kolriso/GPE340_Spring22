@@ -33,13 +33,14 @@ public class Projectile : MonoBehaviour
 
     public void OnTriggerEnter(Collider other)
     {
-        Health otherHealth = other.GetComponent<Health>();
+        if (other.CompareTag("Bullet")) return;
+        EnemyHealth otherHealth = other.GetComponent<EnemyHealth>();
 
         if (otherHealth != null)
         {
             otherHealth.takeDamage(damageDone);
         }
-
+        
         Destroy(gameObject);
     }
 }

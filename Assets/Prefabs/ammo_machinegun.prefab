@@ -211,7 +211,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   damageDone: 10
-  moveSpeed: 10
+  moveSpeed: 15
   lifeSpan: 2
   rb: {fileID: 0}
 --- !u!54 &5360432593108933803

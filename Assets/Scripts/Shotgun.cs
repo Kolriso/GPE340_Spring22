@@ -38,15 +38,11 @@ public class Shotgun : Weapons
     public override void Update()
     {
         base.Update();
-
-        //if (Input.GetButtonDown("Fire1"))
-        //{
-        //    ShotgunBlast();
-        //}
     }
 
     public void ShotgunBlast()
     {
+        print("Shotgun firing!");
         int i = 0;
         foreach(Quaternion quat in pellets)
         {

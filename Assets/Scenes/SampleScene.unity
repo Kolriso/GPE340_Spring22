@@ -1216,6 +1216,7 @@ GameObject:
   - component: {fileID: 678502717}
   - component: {fileID: 678502716}
   - component: {fileID: 678502715}
+  - component: {fileID: 678502719}
   - component: {fileID: 678502714}
   m_Layer: 0
   m_Name: Target
@@ -1233,22 +1234,9 @@ MonoBehaviour:
   m_GameObject: {fileID: 678502713}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f2b344a7dfe14f547af75890b0a42896, type: 3}
+  m_Script: {fileID: 11500000, guid: 07b189771df58a64a9d1df20c9e24cbd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  onHeal:
-    m_PersistentCalls:
-      m_Calls: []
-  onDamage:
-    m_PersistentCalls:
-      m_Calls: []
-  onDie:
-    m_PersistentCalls:
-      m_Calls: []
-  maxHealth: 100
-  currentHealth: 0
-  healthBarImage: {fileID: 0}
-  player: {fileID: 0}
 --- !u!136 &678502715
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -1326,6 +1314,38 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 16
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &678502719
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 678502713}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: eaf114aed6114bb44bf65f6ab9c87983, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  onDamage:
+    m_PersistentCalls:
+      m_Calls: []
+  onDie:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 678502714}
+        m_TargetAssemblyTypeName: WorthPoints, Assembly-CSharp
+        m_MethodName: AddPoints
+        m_Mode: 4
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 100
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+  maxHealth: 100
+  currentHealth: 0
 --- !u!1 &705507993
 GameObject:
   m_ObjectHideFlags: 0
