@@ -13,6 +13,20 @@ public class Shotgun : Weapons
     [Header("Data")]
     public float projectileMoveSpeed;
     public float projectileLifeSpan;
+    public int pelletCount;
+    public float spreadAngle;
+
+    [Header("Lists")]
+    List<Quaternion> pellets;
+
+    public void Awake()
+    {
+        pellets = new List<Quaternion>(pelletCount);
+        for (int i = 0; i < pelletCount; i++)
+        {
+            pellets.Add(Quaternion.Euler(Vector3.zero));
+        }
+    }
 
     // Start is called before the first frame update
     public override void Start()
@@ -24,23 +38,34 @@ public class Shotgun : Weapons
     public override void Update()
     {
         base.Update();
+
+        //if (Input.GetButtonDown("Fire1"))
+        //{
+        //    ShotgunBlast();
+        //}
     }
 
     public void ShotgunBlast()
     {
-        // Instantiate a bullet at the fire location of this rifle
-        GameObject projectile = Instantiate(projectilePrefab, firePoint.position, firePoint.rotation) as GameObject;
-        Projectile projectileScript = projectile.GetComponent<Projectile>();
+        int i = 0;
+        foreach(Quaternion quat in pellets)
+        {
+            Quaternion randomRotation = Random.rotation;
+            // Instantiate a bullet at the fire location of this rifle
+            GameObject projectile = Instantiate(projectilePrefab, firePoint.position, firePoint.rotation) as GameObject;
+            Projectile projectileScript = projectile.GetComponent<Projectile>();
+            projectile.transform.rotation = Quaternion.RotateTowards(projectile.transform.rotation, randomRotation, spreadAngle);
+            // Transfer important information (like damage done) to the bullet
+            if (projectileScript != null)
+            {
+                projectileScript.damageDone = damageDone;
+                projectileScript.moveSpeed = projectileMoveSpeed;
+                projectileScript.lifeSpan = projectileLifeSpan;
+            }
+            i++;
+        }
 
         
-
-        // Transfer important information (like damage done) to the bullet
-        if (projectileScript != null)
-        {
-            projectileScript.damageDone = damageDone;
-            projectileScript.moveSpeed = projectileMoveSpeed;
-            projectileScript.lifeSpan = projectileLifeSpan;
-        }
 
         // The projectile script will handle the rest
     }

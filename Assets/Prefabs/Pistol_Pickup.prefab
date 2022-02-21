@@ -189,7 +189,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2113318067594780206}
-  m_LocalRotation: {x: 0, y: -0, z: -0, w: 1}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 3.617538, y: 0.38, z: -0.69171405}
   m_LocalScale: {x: 7, y: 7, z: 7}
   m_Children:
@@ -216,6 +216,7 @@ MonoBehaviour:
   onPickup:
     m_PersistentCalls:
       m_Calls: []
+  rotationSpeed: 100
   weaponToPickup: {fileID: 2758013877739324198, guid: fc18591c70ab9214b849328fb7bda279, type: 3}
 --- !u!65 &6398711041939804219
 BoxCollider:

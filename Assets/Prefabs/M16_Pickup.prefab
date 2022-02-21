@@ -136,6 +136,7 @@ MonoBehaviour:
   onPickup:
     m_PersistentCalls:
       m_Calls: []
+  rotationSpeed: 100
   weaponToPickup: {fileID: 6172262052033331081, guid: 6687c864db08b5c4baeca41cbff0bef8, type: 3}
 --- !u!65 &5262504219547872634
 BoxCollider:
