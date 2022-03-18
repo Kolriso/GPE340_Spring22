@@ -5,30 +5,54 @@ using UnityEngine.AI;
 
 public class EnemyController : MonoBehaviour
 {
-    private Animator anim;
+    private Pawn pawn;
     private NavMeshAgent agent;
     private float timeForNextNavigationCheck;
     [SerializeField] private float timeBetweenNavigationChecks = 0.5f;
     [Header("Target")]
-    public Transform targetTransform;
+    public PlayerController player;
 
-    // Start is called before the first frame update
-    void Start()
+    public void Awake()
     {
         // Set my timer
         timeForNextNavigationCheck = Time.time + timeBetweenNavigationChecks;
         // Load my components
         agent = GetComponent<NavMeshAgent>();
-        anim = GetComponent<Animator>();
+        pawn = GetComponent<Pawn>();
+    }
+    // Start is called before the first frame update
+    void Start()
+    {
+       if (player == null)
+        {
+            FindPlayer();
+        }
     }
 
     // Update is called once per frame
     void Update()
     {
+        if (player == null)
+        {
+            FindPlayer();
+        }
+        else
+        {
+            MoveToPlayer();
+        }
+    }
+
+    public void FindPlayer()
+    {
+        player = FindObjectOfType<PlayerController>();
+    }
+
+    public void MoveToPlayer()
+    {
         if (Time.time >= timeForNextNavigationCheck)
         {
             // Do check
-            agent.SetDestination(targetTransform.position);
+            agent.SetDestination(player.pawn.transform.position);
             // Reset timer
             timeForNextNavigationCheck = Time.time + timeBetweenNavigationChecks;
         }
@@ -39,27 +63,24 @@ public class EnemyController : MonoBehaviour
         // Set from world direction to local direction
         desiredVelocity = transform.InverseTransformDirection(desiredVelocity);
 
-        // TODO: Change this use the pawn's speed - so it is exactly like player
-        float tempSpeedDeleteMe = 3;
-        desiredVelocity = desiredVelocity.normalized * tempSpeedDeleteMe;
+        // Adjust it for our pawn's speed - so it is exactly like player
+        desiredVelocity = desiredVelocity.normalized * pawn.moveSpeed;
 
         // Pass this in the animator
-        anim.SetFloat("Foward", desiredVelocity.z);
-        anim.SetFloat("Right", desiredVelocity.x);
+        pawn.anim.SetFloat("Forward", desiredVelocity.z);
+        pawn.anim.SetFloat("Right", desiredVelocity.x);
 
         // Rotate towards the player
         Quaternion rotationToMovementDirection = Quaternion.LookRotation(agent.desiredVelocity, Vector3.up);
 
-        // TODO: Get rotation speed from pawn
-        float maxRoatationSpeedTempDeleteMe = 360;
-
-        transform.rotation = Quaternion.RotateTowards(transform.rotation, rotationToMovementDirection, maxRoatationSpeedTempDeleteMe * Time.deltaTime);
+        // Get rotation speed from pawn
+        transform.rotation = Quaternion.RotateTowards(transform.rotation, rotationToMovementDirection, pawn.rotateSpeed * Time.deltaTime);
     }
 
     private void OnAnimatorMove()
     {
         // This runs everytime the animator causes us to move in position
         // Tell the NavMesh Agent that we already moved (so it doesn't have to)
-        agent.velocity = anim.velocity;
+        agent.velocity = pawn.anim.velocity;
     }
 }

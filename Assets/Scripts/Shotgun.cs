@@ -50,6 +50,7 @@ public class Shotgun : Weapons
             GameObject projectile = Instantiate(projectilePrefab, firePoint.position, firePoint.rotation) as GameObject;
             Projectile projectileScript = projectile.GetComponent<Projectile>();
             projectile.transform.rotation = Quaternion.RotateTowards(projectile.transform.rotation, randomRotation, spreadAngle);
+            projectile.layer = gameObject.layer;
             // Transfer important information (like damage done) to the bullet
             if (projectileScript != null)
             {

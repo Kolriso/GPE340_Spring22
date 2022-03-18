@@ -5,7 +5,7 @@ using UnityEngine;
 public class Pawn : MonoBehaviour
 {
     [Header("Animator"), Tooltip("How to get access to the animator within the code")]
-    private Animator anim; // Creating an animator variable
+    [HideInInspector] public Animator anim; // Creating an animator variable
     [Header("Movement Values"), Tooltip("The variables that hold the initial speed and the rotation speed")]
     public float moveSpeed = 1; // Meters per second
     public float rotateSpeed = 540; // Degrees per second
@@ -46,7 +46,10 @@ public class Pawn : MonoBehaviour
         
         // Make it so the weapon's parent (transform.parent) is the correct part of the player
         newWeapon.transform.parent = weaponMountPoint;
-        
+
+        // Putting the weapon on the same layer of who picks it up
+        newWeapon.layer = gameObject.layer;
+
         // Set this pawn so the new weapon is the weapon we use
         weapon = newWeapon.GetComponent<Weapons>();
     }
