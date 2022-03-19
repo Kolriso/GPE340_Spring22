@@ -33,7 +33,7 @@ public class Pistol : Weapons
         // Instantiate a bullet at the fire location of this rifle
         GameObject projectile = Instantiate(projectilePrefab, firePoint.position, firePoint.rotation) as GameObject;
         Projectile projectileScript = projectile.GetComponent<Projectile>();
-
+        projectile.layer = gameObject.layer;
         // Transfer important information (like damage done) to the bullet
         if (projectileScript != null)
         {
