@@ -1045,7 +1045,7 @@ GameObject:
   - component: {fileID: 4496443797129822505}
   - component: {fileID: 4496443797129822501}
   m_Layer: 7
-  m_Name: Ch44_nonPBR
+  m_Name: Enemy
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
