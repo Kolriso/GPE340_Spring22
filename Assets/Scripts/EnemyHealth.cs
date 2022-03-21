@@ -13,6 +13,8 @@ public class EnemyHealth : MonoBehaviour
     [SerializeField] private float maxHealth = 100.0f;
     public float currentHealth;
 
+    private RagdollController ragdoll;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -38,8 +40,8 @@ public class EnemyHealth : MonoBehaviour
         {
             // Call the onDie event
             onDie.Invoke();
-
-            Destroy(gameObject);
+            ragdoll.ToggleRagdoll();
+            //Destroy(gameObject);
         }
         else
         {

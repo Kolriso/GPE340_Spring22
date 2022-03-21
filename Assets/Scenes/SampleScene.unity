@@ -3727,6 +3727,18 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4496443797129822503, guid: f735f7f1d8c95f741b44f1f455ad9a00, type: 3}
+      propertyPath: m_Height
+      value: 2.01293
+      objectReference: {fileID: 0}
+    - target: {fileID: 4496443797129822503, guid: f735f7f1d8c95f741b44f1f455ad9a00, type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4496443797129822503, guid: f735f7f1d8c95f741b44f1f455ad9a00, type: 3}
+      propertyPath: m_Center.y
+      value: 0.9364557
+      objectReference: {fileID: 0}
     - target: {fileID: 4496443797129822504, guid: f735f7f1d8c95f741b44f1f455ad9a00, type: 3}
       propertyPath: player
       value: 
@@ -3744,34 +3756,6 @@ PrefabInstance:
       propertyPath: healthBarImage
       value: 
       objectReference: {fileID: 839197100}
-    - target: {fileID: 12039192527270304, guid: d4f22f674a521d144b7184e875d3f294, type: 3}
-      propertyPath: onHeal.m_PersistentCalls.m_Calls.Array.size
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 12039192527270304, guid: d4f22f674a521d144b7184e875d3f294, type: 3}
-      propertyPath: onHeal.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 12039192527270304, guid: d4f22f674a521d144b7184e875d3f294, type: 3}
-      propertyPath: onHeal.m_PersistentCalls.m_Calls.Array.data[0].m_Target
-      value: 
-      objectReference: {fileID: 5888055944035769683, guid: e9b4ebc0f18fe154e92af25cd678ad6e, type: 3}
-    - target: {fileID: 12039192527270304, guid: d4f22f674a521d144b7184e875d3f294, type: 3}
-      propertyPath: onHeal.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 12039192527270304, guid: d4f22f674a521d144b7184e875d3f294, type: 3}
-      propertyPath: onHeal.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: HealthBoost
-      objectReference: {fileID: 0}
-    - target: {fileID: 12039192527270304, guid: d4f22f674a521d144b7184e875d3f294, type: 3}
-      propertyPath: onHeal.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
-      value: HealthPickup, Assembly-CSharp
-      objectReference: {fileID: 0}
-    - target: {fileID: 12039192527270304, guid: d4f22f674a521d144b7184e875d3f294, type: 3}
-      propertyPath: onHeal.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
-      value: UnityEngine.Object, UnityEngine
-      objectReference: {fileID: 0}
     - target: {fileID: 7023263438458811068, guid: d4f22f674a521d144b7184e875d3f294, type: 3}
       propertyPath: playerCamera
       value: 
