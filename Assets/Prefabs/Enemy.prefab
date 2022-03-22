@@ -1313,6 +1313,7 @@ GameObject:
   - component: {fileID: 4496443797129822505}
   - component: {fileID: 4496443797129822501}
   - component: {fileID: 1368134652680616533}
+  - component: {fileID: 6817648696759474844}
   m_Layer: 7
   m_Name: Enemy
   m_TagString: Untagged
@@ -1363,9 +1364,9 @@ CapsuleCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   m_Radius: 0.5
-  m_Height: 2
+  m_Height: 2.01293
   m_Direction: 1
-  m_Center: {x: 0, y: 1, z: 0}
+  m_Center: {x: 0, y: 0.9364557, z: 0}
 --- !u!95 &4496443797129822502
 Animator:
   serializedVersion: 3
@@ -1419,10 +1420,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b6d773b5691303d41a99dc5f0ce55f66, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  firePoint: {fileID: 0}
+  projectilePrefab: {fileID: 570761110685845075, guid: 33d95cb140e093646b719559e5fcf64a, type: 3}
+  projectileMoveSpeed: 10
+  projectileLifeSpan: 1
   leadModifier: 1
   timeBetweenNavigationChecks: 0.5
   maxShootingError: 1
-  minShootDistance: 10
+  minShootDistance: 2
   maxShootDistance: 25
   player: {fileID: 0}
 --- !u!114 &4496443797129822505
@@ -1451,12 +1456,37 @@ MonoBehaviour:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
-          m_FloatArgument: 100
+          m_FloatArgument: 1000
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-  maxHealth: 100
+      - m_Target: {fileID: 4496443797129822505}
+        m_TargetAssemblyTypeName: EnemyHealth, Assembly-CSharp
+        m_MethodName: DespawnTimer
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 4496443797129822505}
+        m_TargetAssemblyTypeName: EnemyHealth, Assembly-CSharp
+        m_MethodName: TurnOffAIController
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+  maxHealth: 200
   currentHealth: 0
+  delayTimer: 3
 --- !u!114 &4496443797129822501
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1486,6 +1516,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 07b189771df58a64a9d1df20c9e24cbd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &6817648696759474844
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3650161032140658048}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 554ca96e89b40b4419b6c8c102ae741d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  isRagdoll: 0
 --- !u!1 &4312669900086771953
 GameObject:
   m_ObjectHideFlags: 0
@@ -2288,7 +2331,6 @@ GameObject:
   m_Component:
   - component: {fileID: 8162705639445171412}
   - component: {fileID: 3324357202120505503}
-  - component: {fileID: 5520602928157747117}
   m_Layer: 7
   m_Name: Ch44
   m_TagString: Untagged
@@ -2428,19 +2470,6 @@ SkinnedMeshRenderer:
     m_Center: {x: -0.00004094839, y: -0.14692938, z: 0.031268567}
     m_Extent: {x: 0.9321286, y: 1.0150791, z: 0.28149375}
   m_DirtyAABB: 0
---- !u!114 &5520602928157747117
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6347169896996969298}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 554ca96e89b40b4419b6c8c102ae741d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  isRagdoll: 0
 --- !u!1 &6365493466190073201
 GameObject:
   m_ObjectHideFlags: 0
@@ -2635,13 +2664,13 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6913995864626863008}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0, y: 0.345, z: 0.397}
+  m_LocalRotation: {x: 0, y: -0.45041013, z: 0, w: 0.8928218}
+  m_LocalPosition: {x: -0.23, y: 0.28, z: 0.31}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 8483788283519283118}
   m_RootOrder: 3
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: -53.54, z: 0}
 --- !u!1 &7206195184583256733
 GameObject:
   m_ObjectHideFlags: 0

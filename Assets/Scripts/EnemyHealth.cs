@@ -12,19 +12,44 @@ public class EnemyHealth : MonoBehaviour
     [Header("Values")]
     [SerializeField] private float maxHealth = 100.0f;
     public float currentHealth;
+    public float delayTimer;
+
+    private float currentTimer;
+
+    private bool countdownToDeath = false;
 
     private RagdollController ragdoll;
 
     // Start is called before the first frame update
     void Start()
     {
+        currentTimer = delayTimer;
         currentHealth = maxHealth;
+        ragdoll = GetComponent<RagdollController>();
     }
 
     // Update is called once per frame
     void Update()
     {
-        
+        if(countdownToDeath)
+        {
+            currentTimer -= Time.deltaTime;
+            if (currentTimer <= 0)
+            {
+                Destroy(gameObject);
+            }
+        }
+    }
+
+    public void TurnOffAIController()
+    {
+        AIAlien controller = GetComponent<AIAlien>();
+        controller.enabled = false;
+    }
+
+    public void DespawnTimer()
+    {
+        countdownToDeath = true;
     }
 
     public void takeDamage(float amountOfDamage)

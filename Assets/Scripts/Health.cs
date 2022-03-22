@@ -17,6 +17,11 @@ public class Health : MonoBehaviour
     [Header("Values")]
     [SerializeField] public float maxHealth = 1.0f;
     public float currentHealth;
+    public float delayTimer;
+
+    private float currentTimer;
+    private bool countdownToDeath = false;
+    private RagdollController ragdoll;
 
     [Header("UI")]
     public Image healthBarImage;
@@ -31,10 +36,30 @@ public class Health : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if (countdownToDeath)
+        {
+            currentTimer -= Time.deltaTime;
+            if (currentTimer <= 0)
+            {
+                Destroy(gameObject);
+            }
+        }
+
         if (Input.GetKeyDown(KeyCode.Space))
         {
             takeDamage(10.0f);
         }
+    }
+
+    public void TurnOffPlayerController()
+    {
+        PlayerController controller = GetComponent<PlayerController>();
+        controller.enabled = false;
+    }
+
+    public void DespawnTimer()
+    {
+        countdownToDeath = true;
     }
 
     public void UpdateHealthBar()
@@ -57,8 +82,8 @@ public class Health : MonoBehaviour
         {
             // Call the onDie event
             onDie.Invoke();
-
-            Destroy(this);
+            ragdoll.ToggleRagdoll();
+            //Destroy(this);
         }
         else
         {

@@ -35,12 +35,18 @@ public class Projectile : MonoBehaviour
     {
         if (other.CompareTag("Bullet")) return;
         EnemyHealth otherHealth = other.GetComponent<EnemyHealth>();
+        Health playerHealth = other.GetComponent<Health>();
 
         if (otherHealth != null)
         {
             otherHealth.takeDamage(damageDone);
         }
         
+        if (playerHealth != null)
+        {
+            playerHealth.takeDamage(damageDone);
+        }
+
         Destroy(gameObject);
     }
 }

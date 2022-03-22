@@ -12,6 +12,7 @@ public class AIAlien : AIController
     private Vector3 leadVector; // How far in front of (or otherwise away from) player to shoot
     private float noLeadDistance = 0.0f; // Use 0% of lead modifier
     private float maxLeadDistance = 15.0f; // Use 100% of lead modifier
+
     [Header("Lead Modifier")]
     public float leadModifier = 1.0f;
     
@@ -40,7 +41,7 @@ public class AIAlien : AIController
     // Start is called before the first frame update
     public override void Start()
     {
-       if (player == null)
+        if (player == null)
         {
             FindPlayer();
         }
@@ -97,6 +98,7 @@ public class AIAlien : AIController
             pawn.weapon.transform.Rotate(0, shootingError, 0);
             // Shoot
             pawn.weapon.Attack();
+            // The projectile script will handle the rest
             // Rotate back
             pawn.weapon.transform.Rotate(0, -shootingError, 0);
         }
