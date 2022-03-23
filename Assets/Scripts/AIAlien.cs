@@ -98,7 +98,6 @@ public class AIAlien : AIController
             pawn.weapon.transform.Rotate(0, shootingError, 0);
             // Shoot
             pawn.weapon.Attack();
-            // The projectile script will handle the rest
             // Rotate back
             pawn.weapon.transform.Rotate(0, -shootingError, 0);
         }
