@@ -19,9 +19,9 @@ public class Health : MonoBehaviour
     public float currentHealth;
     public float delayTimer;
 
-    private float currentTimer;
-    private bool countdownToDeath = false;
+    private float deathTimer = 5.0f;
     private RagdollController ragdoll;
+    private ResetButton restartGame;
 
     [Header("UI")]
     public Image healthBarImage;
@@ -30,20 +30,22 @@ public class Health : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        restartGame = FindObjectOfType<ResetButton>();
+        ragdoll = GetComponent<RagdollController>();
         currentHealth = maxHealth;
     }
 
     // Update is called once per frame
     void Update()
     {
-        if (countdownToDeath)
-        {
-            currentTimer -= Time.deltaTime;
-            if (currentTimer <= 0)
-            {
-                Destroy(gameObject);
-            }
-        }
+    //    if (countdownToDeath)
+    //    {
+    //        currentTimer -= Time.deltaTime;
+    //        if (currentTimer <= 0)
+    //        {
+    //            Destroy(gameObject);
+    //        }
+    //    }
 
         if (Input.GetKeyDown(KeyCode.Space))
         {
@@ -59,7 +61,8 @@ public class Health : MonoBehaviour
 
     public void DespawnTimer()
     {
-        countdownToDeath = true;
+        Destroy(gameObject, deathTimer);
+        //countdownToDeath = true;
     }
 
     public void UpdateHealthBar()
@@ -83,7 +86,8 @@ public class Health : MonoBehaviour
             // Call the onDie event
             onDie.Invoke();
             ragdoll.ToggleRagdoll();
-            //Destroy(this);
+            player.UnequipWeapon();
+            restartGame.ShowCanvas();
         }
         else
         {

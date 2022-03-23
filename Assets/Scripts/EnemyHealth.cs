@@ -20,12 +20,15 @@ public class EnemyHealth : MonoBehaviour
 
     private RagdollController ragdoll;
 
+    private Pawn pawn;
+
     // Start is called before the first frame update
     void Start()
     {
         currentTimer = delayTimer;
         currentHealth = maxHealth;
         ragdoll = GetComponent<RagdollController>();
+        pawn = GetComponent<Pawn>();
     }
 
     // Update is called once per frame
@@ -66,7 +69,7 @@ public class EnemyHealth : MonoBehaviour
             // Call the onDie event
             onDie.Invoke();
             ragdoll.ToggleRagdoll();
-            //Destroy(gameObject);
+            pawn.UnequipWeapon();
         }
         else
         {

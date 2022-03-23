@@ -79,6 +79,8 @@ public class RagdollController : MonoBehaviour
         mainRigidbody.isKinematic = true;
         // Turn OFF the animator
         animator.enabled = false;
+
+        ragdollRigidbodies[1].AddForce(-transform.forward * 5000f);
     }
 
     public void DeactivateRagdoll()

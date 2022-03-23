@@ -34,19 +34,22 @@ public class Weapons : MonoBehaviour
     {
         // Subtract the time it took to play the last frame from our countdown
         countDown -= Time.deltaTime;
-
-        if (isAutoFiring && countDown <= 0)
+        
+        if (isAutoFiring)
         {
-            // Shoot
             Attack();
-            // Reset the timer
-            countDown = fireDelay;
         }
     }
 
     public void Attack()
     {
-        onShoot.Invoke();
+        if (countDown <= 0)
+        {
+            // Shoot
+            onShoot.Invoke();
+            // Reset the timer
+            countDown = fireDelay;
+        }
     }
 
     public void StartAutoFire()
