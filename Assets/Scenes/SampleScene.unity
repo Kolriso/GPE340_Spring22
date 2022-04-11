@@ -437,7 +437,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b2a5002e4c648cf47bc835708f82debf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  objectToSpawn: {fileID: 3650161032140658048, guid: f735f7f1d8c95f741b44f1f455ad9a00, type: 3}
+  objectsToSpawn:
+  - objectToSpawn: {fileID: 3650161032140658048, guid: f735f7f1d8c95f741b44f1f455ad9a00, type: 3}
+    weight: 1
   spawnMesh: {fileID: 1022625529149906712, guid: 3163e18277a671642977b60915a6a5bf, type: 3}
   respawnTime: 20
 --- !u!4 &154485510
@@ -483,7 +485,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b2a5002e4c648cf47bc835708f82debf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  objectToSpawn: {fileID: 5888055944035769684, guid: e9b4ebc0f18fe154e92af25cd678ad6e, type: 3}
+  objectsToSpawn:
+  - objectToSpawn: {fileID: 2113318067594780206, guid: d02d8a98d19338e4facbdaec96a51db8, type: 3}
+    weight: 200
+  - objectToSpawn: {fileID: 5888055944035769684, guid: e9b4ebc0f18fe154e92af25cd678ad6e, type: 3}
+    weight: 100
+  - objectToSpawn: {fileID: 5262504219547872635, guid: b269d14f4208ebd488ad57912e5e8589, type: 3}
+    weight: 10
+  - objectToSpawn: {fileID: 3613562258175810038, guid: 65459eed94ba9c748942483e73d21625, type: 3}
+    weight: 1
   spawnMesh: {fileID: 0}
   respawnTime: 10
 --- !u!4 &276647585
@@ -735,7 +745,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b2a5002e4c648cf47bc835708f82debf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  objectToSpawn: {fileID: 3650161032140658048, guid: f735f7f1d8c95f741b44f1f455ad9a00, type: 3}
+  objectsToSpawn:
+  - objectToSpawn: {fileID: 3650161032140658048, guid: f735f7f1d8c95f741b44f1f455ad9a00, type: 3}
+    weight: 1
   spawnMesh: {fileID: 1022625529149906712, guid: 3163e18277a671642977b60915a6a5bf, type: 3}
   respawnTime: 20
 --- !u!4 &427182641
@@ -781,7 +793,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b2a5002e4c648cf47bc835708f82debf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  objectToSpawn: {fileID: 2113318067594780206, guid: d02d8a98d19338e4facbdaec96a51db8, type: 3}
+  objectsToSpawn:
+  - objectToSpawn: {fileID: 2113318067594780206, guid: d02d8a98d19338e4facbdaec96a51db8, type: 3}
+    weight: 200
+  - objectToSpawn: {fileID: 5888055944035769684, guid: e9b4ebc0f18fe154e92af25cd678ad6e, type: 3}
+    weight: 100
+  - objectToSpawn: {fileID: 5262504219547872635, guid: b269d14f4208ebd488ad57912e5e8589, type: 3}
+    weight: 10
+  - objectToSpawn: {fileID: 3613562258175810038, guid: 65459eed94ba9c748942483e73d21625, type: 3}
+    weight: 1
   spawnMesh: {fileID: 0}
   respawnTime: 2
 --- !u!4 &508926377
@@ -3344,7 +3364,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b2a5002e4c648cf47bc835708f82debf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  objectToSpawn: {fileID: 3613562258175810038, guid: 65459eed94ba9c748942483e73d21625, type: 3}
+  objectsToSpawn:
+  - objectToSpawn: {fileID: 2113318067594780206, guid: d02d8a98d19338e4facbdaec96a51db8, type: 3}
+    weight: 200
+  - objectToSpawn: {fileID: 5888055944035769684, guid: e9b4ebc0f18fe154e92af25cd678ad6e, type: 3}
+    weight: 100
+  - objectToSpawn: {fileID: 5262504219547872635, guid: b269d14f4208ebd488ad57912e5e8589, type: 3}
+    weight: 10
+  - objectToSpawn: {fileID: 3613562258175810038, guid: 65459eed94ba9c748942483e73d21625, type: 3}
+    weight: 1
   spawnMesh: {fileID: 0}
   respawnTime: 8
 --- !u!4 &1303195780
@@ -3585,7 +3613,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b2a5002e4c648cf47bc835708f82debf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  objectToSpawn: {fileID: 3650161032140658048, guid: f735f7f1d8c95f741b44f1f455ad9a00, type: 3}
+  objectsToSpawn:
+  - objectToSpawn: {fileID: 3650161032140658048, guid: f735f7f1d8c95f741b44f1f455ad9a00, type: 3}
+    weight: 1
   spawnMesh: {fileID: 1022625529149906712, guid: 3163e18277a671642977b60915a6a5bf, type: 3}
   respawnTime: 20
 --- !u!4 &1431895306
@@ -3681,7 +3711,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b2a5002e4c648cf47bc835708f82debf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  objectToSpawn: {fileID: 3650161032140658048, guid: f735f7f1d8c95f741b44f1f455ad9a00, type: 3}
+  objectsToSpawn:
+  - objectToSpawn: {fileID: 3650161032140658048, guid: f735f7f1d8c95f741b44f1f455ad9a00, type: 3}
+    weight: 1
   spawnMesh: {fileID: 1022625529149906712, guid: 3163e18277a671642977b60915a6a5bf, type: 3}
   respawnTime: 20
 --- !u!4 &1770195997
@@ -3727,7 +3759,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b2a5002e4c648cf47bc835708f82debf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  objectToSpawn: {fileID: 5262504219547872635, guid: b269d14f4208ebd488ad57912e5e8589, type: 3}
+  objectsToSpawn:
+  - objectToSpawn: {fileID: 2113318067594780206, guid: d02d8a98d19338e4facbdaec96a51db8, type: 3}
+    weight: 200
+  - objectToSpawn: {fileID: 5888055944035769684, guid: e9b4ebc0f18fe154e92af25cd678ad6e, type: 3}
+    weight: 100
+  - objectToSpawn: {fileID: 5262504219547872635, guid: b269d14f4208ebd488ad57912e5e8589, type: 3}
+    weight: 10
+  - objectToSpawn: {fileID: 3613562258175810038, guid: 65459eed94ba9c748942483e73d21625, type: 3}
+    weight: 1
   spawnMesh: {fileID: 0}
   respawnTime: 5
 --- !u!4 &1843811120
