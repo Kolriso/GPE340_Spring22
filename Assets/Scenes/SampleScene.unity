@@ -123,6 +123,11 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 23800000, guid: 7793e6dff50613f43b0638b1af5fd3e1, type: 2}
+--- !u!4 &33256664 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 4378652430866346772, guid: f735f7f1d8c95f741b44f1f455ad9a00, type: 3}
+  m_PrefabInstance: {fileID: 4496443795752663502}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &61379623
 GameObject:
   m_ObjectHideFlags: 0
@@ -4043,6 +4048,58 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2046722534}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!1 &2055948279
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2055948280}
+  - component: {fileID: 2055948281}
+  m_Layer: 7
+  m_Name: WeaponSpawner
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &2055948280
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2055948279}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 33256664}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &2055948281
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2055948279}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b2a5002e4c648cf47bc835708f82debf, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  objectsToSpawn:
+  - objectToSpawn: {fileID: 2113318067594780206, guid: d02d8a98d19338e4facbdaec96a51db8, type: 3}
+    weight: 100
+  - objectToSpawn: {fileID: 5262504219547872635, guid: b269d14f4208ebd488ad57912e5e8589, type: 3}
+    weight: 10
+  - objectToSpawn: {fileID: 3613562258175810038, guid: 65459eed94ba9c748942483e73d21625, type: 3}
+    weight: 1
+  spawnMesh: {fileID: 0}
+  respawnTime: 0
 --- !u!1 &2107191129
 GameObject:
   m_ObjectHideFlags: 0
