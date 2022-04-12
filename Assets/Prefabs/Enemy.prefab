@@ -1430,7 +1430,7 @@ MonoBehaviour:
   listOfWeapons:
   - {fileID: 6172262052033331081, guid: 6687c864db08b5c4baeca41cbff0bef8, type: 3}
   - {fileID: 2758013877739324198, guid: fc18591c70ab9214b849328fb7bda279, type: 3}
-  - {fileID: 3613562258175810038, guid: 65459eed94ba9c748942483e73d21625, type: 3}
+  - {fileID: 8456292650102883287, guid: 468eff013759bb044b692fe48a7b5642, type: 3}
 --- !u!114 &4496443797129822505
 MonoBehaviour:
   m_ObjectHideFlags: 0
