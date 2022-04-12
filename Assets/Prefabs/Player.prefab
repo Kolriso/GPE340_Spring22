@@ -2670,7 +2670,6 @@ GameObject:
   - component: {fileID: 3466981487617931840}
   - component: {fileID: 7023263438458811058}
   - component: {fileID: 7023263438458811070}
-  - component: {fileID: 7023263438458811068}
   - component: {fileID: 12039192527270304}
   - component: {fileID: 574550744091725691}
   - component: {fileID: 1952565398404694454}
@@ -2747,22 +2746,6 @@ CapsuleCollider:
   m_Height: 2
   m_Direction: 1
   m_Center: {x: 0, y: 0.9, z: 0}
---- !u!114 &7023263438458811068
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7905731816225503872}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ae6013145c9a3144b9b70510da70724b, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  pawn: {fileID: 574550744091725691}
-  playerCamera: {fileID: 0}
-  sprint: 2
-  walk: 0.5
 --- !u!114 &12039192527270304
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2777,49 +2760,13 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   onHeal:
     m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 5888055944035769683, guid: e9b4ebc0f18fe154e92af25cd678ad6e, type: 3}
-        m_TargetAssemblyTypeName: HealthPickup, Assembly-CSharp
-        m_MethodName: HealthBoost
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
+      m_Calls: []
   onDamage:
     m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 1952565398404694454}
-        m_TargetAssemblyTypeName: WorthPoints, Assembly-CSharp
-        m_MethodName: AddPoints
-        m_Mode: 4
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 10
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
+      m_Calls: []
   onDie:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1952565398404694454}
-        m_TargetAssemblyTypeName: WorthPoints, Assembly-CSharp
-        m_MethodName: AddPoints
-        m_Mode: 4
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 1000
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
       - m_Target: {fileID: 12039192527270304}
         m_TargetAssemblyTypeName: Health, Assembly-CSharp
         m_MethodName: DespawnTimer
@@ -2832,33 +2779,10 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 12039192527270304}
-        m_TargetAssemblyTypeName: Health, Assembly-CSharp
-        m_MethodName: TurnOffPlayerController
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-      - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: GameManager, Assembly-CSharp
-        m_MethodName: SpawnPlayer
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
   maxHealth: 100
   currentHealth: 0
   delayTimer: 10
+  lives: 0
   healthBarImage: {fileID: 0}
   player: {fileID: 574550744091725691}
 --- !u!114 &574550744091725691
@@ -2878,6 +2802,7 @@ MonoBehaviour:
   rotateSpeed: 540
   weapon: {fileID: 0}
   weaponMountPoint: {fileID: 3550965519800829334}
+  health: {fileID: 0}
 --- !u!114 &1952565398404694454
 MonoBehaviour:
   m_ObjectHideFlags: 0

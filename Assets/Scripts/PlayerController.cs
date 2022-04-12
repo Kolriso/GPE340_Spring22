@@ -12,6 +12,9 @@ public class PlayerController : MonoBehaviour
     [SerializeField] private float sprint = 2.0f; // The variable for the sprint value
     [SerializeField] private float walk = 0.5f; // The variable for the walk value
 
+    [Header("Player Lives")]
+    public int lives;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -22,37 +25,40 @@ public class PlayerController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        // Send my move command to my pawn
-        Vector3 moveVector = new Vector3(Input.GetAxis("Horizontal"), 0, Input.GetAxis("Vertical"));
-
-        // Adjust this value, so that it's based on the direction the character's facing
-        moveVector = pawn.transform.InverseTransformDirection(moveVector);
-
-        // Limit the vector magnitude to 1
-        moveVector = Vector3.ClampMagnitude(moveVector, 1.0f);
-
-        // Tell the pawn to move
-        pawn.Move(moveVector);
-
-        // An if statement to see whether or not the left shift or Z button is being pressed or not in order to walk, run, or sprint
-        if (Input.GetKey(KeyCode.Z))
+        if (pawn != null)
         {
-            pawn.moveSpeed = walk;
-        } 
-        else if (Input.GetKey(KeyCode.LeftShift))
-        {
-            pawn.moveSpeed = sprint;
+            // Send my move command to my pawn
+            Vector3 moveVector = new Vector3(Input.GetAxis("Horizontal"), 0, Input.GetAxis("Vertical"));
+
+            // Adjust this value, so that it's based on the direction the character's facing
+            moveVector = pawn.transform.InverseTransformDirection(moveVector);
+
+            // Limit the vector magnitude to 1
+            moveVector = Vector3.ClampMagnitude(moveVector, 1.0f);
+
+            // Tell the pawn to move
+            pawn.Move(moveVector);
+
+            // An if statement to see whether or not the left shift or Z button is being pressed or not in order to walk, run, or sprint
+            if (Input.GetKey(KeyCode.Z))
+            {
+                pawn.moveSpeed = walk;
+            }
+            else if (Input.GetKey(KeyCode.LeftShift))
+            {
+                pawn.moveSpeed = sprint;
+            }
+            else
+            {
+                pawn.moveSpeed = 1.0f;
+            }
+
+            // Read fire button inputs
+            GetButtonInputs();
+
+            // Rotate player to face the mouse
+            RotateToMouse();
         }
-        else
-        {
-            pawn.moveSpeed = 1.0f;
-        }
-
-        // Read fire button inputs
-        GetButtonInputs();
-
-        // Rotate player to face the mouse
-        RotateToMouse();
     }
 
     private void GetButtonInputs()

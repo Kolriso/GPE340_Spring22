@@ -12,11 +12,14 @@ public class Pawn : MonoBehaviour
     [Header("Weapon")]
     public Weapons weapon;
     public Transform weaponMountPoint;
+    [Header("Components")]
+    public Health health;
 
     // Start is called before the first frame update
     void Start()
     {
         anim = GetComponent<Animator>();
+        health = GetComponent<Health>();
     }
 
     // Update is called once per frame

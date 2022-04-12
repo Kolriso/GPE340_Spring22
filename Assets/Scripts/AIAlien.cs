@@ -47,14 +47,14 @@ public class AIAlien : AIController
     {
         if (player == null)
         {
-            FindPlayer();
+            player = GameManager.instance.player;
         }
     }
 
     // Update is called once per frame
     public override void Update()
     {
-        if (player == null)
+        if (player.pawn == null)
         {
             FindPlayer();
         }
@@ -73,20 +73,20 @@ public class AIAlien : AIController
 
     public void SetLeadVector()
     {
-        // Find the distance to the player
-        float distanceToPlayer = Vector3.Distance(player.transform.position, pawn.transform.position);
+            // Find the distance to the player
+            float distanceToPlayer = Vector3.Distance(player.transform.position, pawn.transform.position);
 
-        // Clamp that distance between our zero lead and max lead distances
-        distanceToPlayer = Mathf.Clamp(distanceToPlayer, noLeadDistance, maxLeadDistance);
+            // Clamp that distance between our zero lead and max lead distances
+            distanceToPlayer = Mathf.Clamp(distanceToPlayer, noLeadDistance, maxLeadDistance);
 
-        float dTPFromMin = distanceToPlayer - noLeadDistance;
-        float totalLeadDistanceRange = maxLeadDistance - noLeadDistance;
-        // Find what percent of the total range I currently am
-        float percentOfLeadDistanceRange = dTPFromMin / totalLeadDistanceRange;
+            float dTPFromMin = distanceToPlayer - noLeadDistance;
+            float totalLeadDistanceRange = maxLeadDistance - noLeadDistance;
+            // Find what percent of the total range I currently am
+            float percentOfLeadDistanceRange = dTPFromMin / totalLeadDistanceRange;
 
-        // Now that I have that range, I can multiply my lead modifier by it
-        // Find a few "seconds" in front of the player
-        leadVector = player.pawn.anim.velocity * (leadModifier * percentOfLeadDistanceRange);
+            // Now that I have that range, I can multiply my lead modifier by it
+            // Find a few "seconds" in front of the player
+            leadVector = player.pawn.anim.velocity * (leadModifier * percentOfLeadDistanceRange);
     }
 
     public void ShootAtPlayer()
@@ -109,7 +109,7 @@ public class AIAlien : AIController
 
     public void FindPlayer()
     {
-        player = FindObjectOfType<PlayerController>();
+        player = GameManager.instance.player;
     }
 
     public void RotateTowardsPlayer()

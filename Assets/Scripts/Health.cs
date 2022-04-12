@@ -21,16 +21,13 @@ public class Health : MonoBehaviour
 
     private float deathTimer = 5.0f;
     private RagdollController ragdoll;
-    private ResetButton restartGame;
 
     [Header("UI")]
-    public Image healthBarImage;
     public Pawn player;
 
     // Start is called before the first frame update
     void Start()
     {
-        restartGame = FindObjectOfType<ResetButton>();
         ragdoll = GetComponent<RagdollController>();
         currentHealth = maxHealth;
     }
@@ -65,11 +62,6 @@ public class Health : MonoBehaviour
         //countdownToDeath = true;
     }
 
-    public void UpdateHealthBar()
-    {
-        healthBarImage.fillAmount = Mathf.Clamp(currentHealth / maxHealth, 0, 1.0f);
-    }
-
     public void takeDamage(float amountOfDamage)
     {
         // Call the onDamage event
@@ -78,7 +70,7 @@ public class Health : MonoBehaviour
         // Subtract the health here when damage is applied
         currentHealth -= amountOfDamage;
 
-        UpdateHealthBar();
+        GameManager.instance.uiManager.UpdateHealthBar(currentHealth, maxHealth);
 
         // If our health <= 0, the player dies
         if (currentHealth <= 0)
@@ -87,7 +79,6 @@ public class Health : MonoBehaviour
             onDie.Invoke();
             ragdoll.ToggleRagdoll();
             player.UnequipWeapon();
-            restartGame.ShowCanvas();
         }
         else
         {
@@ -107,6 +98,6 @@ public class Health : MonoBehaviour
         // Make sure you don't go over the max health
         currentHealth = Mathf.Min(currentHealth, maxHealth);
 
-        UpdateHealthBar();
+        GameManager.instance.uiManager.UpdateHealthBar(currentHealth, maxHealth);
     }
 }

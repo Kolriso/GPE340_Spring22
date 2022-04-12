@@ -1518,6 +1518,7 @@ MonoBehaviour:
   rotateSpeed: 540
   weapon: {fileID: 0}
   weaponMountPoint: {fileID: 4378652430866346772}
+  health: {fileID: 0}
 --- !u!114 &1368134652680616533
 MonoBehaviour:
   m_ObjectHideFlags: 0
