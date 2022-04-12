@@ -7,6 +7,10 @@ public class GameManager : MonoBehaviour
 {
     public static GameManager instance;
 
+    [Header("Level Settings")]
+    public GameObject playerPrefab;
+    public Transform playerSpawnPoint;
+
     private void Awake()
     {
         // The first Game manager
@@ -26,6 +30,11 @@ public class GameManager : MonoBehaviour
     void Start()
     {
         // Show main menu
+    }
+
+    public void SpawnPlayer()
+    {
+        Instantiate(playerPrefab, playerSpawnPoint.position, Quaternion.identity);
     }
 
     // Start game starts when gameplay starts

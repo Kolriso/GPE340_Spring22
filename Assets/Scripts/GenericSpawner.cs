@@ -5,7 +5,7 @@ using UnityEngine;
 public class GenericSpawner : MonoBehaviour
 {
     [Header("Game Objects")]
-    public RandomWeightedObjects[] objectsToSpawn;
+    public RandomWeightedObjects[] itemDrops;
     public Mesh spawnMesh;
     [Header("Data")]
     public float respawnTime;
@@ -50,14 +50,14 @@ public class GenericSpawner : MonoBehaviour
         GameObject objectToSpawn;
 
         // Create a second parallel array - this holds the cutoff (where it changes to the next type)
-        float[] CDFArray = new float[objectsToSpawn.Length];
+        float[] CDFArray = new float[itemDrops.Length];
         
         // Variable to hold cumulative density (total weights so far)
         float cumulativeDensity = 0;
-        for (int i = 0; i < objectsToSpawn.Length; i++)
+        for (int i = 0; i < itemDrops.Length; i++)
         {
             // Add this object's weight, so we know where the cutoff is
-            cumulativeDensity += objectsToSpawn[i].weight;
+            cumulativeDensity += itemDrops[i].weight;
             // Store that in the CDF Array
             CDFArray[i] = cumulativeDensity;
         }
@@ -86,7 +86,7 @@ public class GenericSpawner : MonoBehaviour
             selectedIndex = ~selectedIndex;
         }
 
-        objectToSpawn = objectsToSpawn[selectedIndex].objectToSpawn;
+        objectToSpawn = itemDrops[selectedIndex].objectToSpawn;
         return objectToSpawn;
     }
 

@@ -123,11 +123,6 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 23800000, guid: 7793e6dff50613f43b0638b1af5fd3e1, type: 2}
---- !u!4 &33256664 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 4378652430866346772, guid: f735f7f1d8c95f741b44f1f455ad9a00, type: 3}
-  m_PrefabInstance: {fileID: 4496443795752663502}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &61379623
 GameObject:
   m_ObjectHideFlags: 0
@@ -442,9 +437,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b2a5002e4c648cf47bc835708f82debf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  objectsToSpawn:
-  - objectToSpawn: {fileID: 3650161032140658048, guid: f735f7f1d8c95f741b44f1f455ad9a00, type: 3}
-    weight: 1
+  itemDrops: []
   spawnMesh: {fileID: 1022625529149906712, guid: 3163e18277a671642977b60915a6a5bf, type: 3}
   respawnTime: 20
 --- !u!4 &154485510
@@ -490,15 +483,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b2a5002e4c648cf47bc835708f82debf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  objectsToSpawn:
-  - objectToSpawn: {fileID: 2113318067594780206, guid: d02d8a98d19338e4facbdaec96a51db8, type: 3}
-    weight: 200
-  - objectToSpawn: {fileID: 5888055944035769684, guid: e9b4ebc0f18fe154e92af25cd678ad6e, type: 3}
-    weight: 100
-  - objectToSpawn: {fileID: 5262504219547872635, guid: b269d14f4208ebd488ad57912e5e8589, type: 3}
-    weight: 10
-  - objectToSpawn: {fileID: 3613562258175810038, guid: 65459eed94ba9c748942483e73d21625, type: 3}
-    weight: 1
+  itemDrops: []
   spawnMesh: {fileID: 0}
   respawnTime: 10
 --- !u!4 &276647585
@@ -750,9 +735,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b2a5002e4c648cf47bc835708f82debf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  objectsToSpawn:
-  - objectToSpawn: {fileID: 3650161032140658048, guid: f735f7f1d8c95f741b44f1f455ad9a00, type: 3}
-    weight: 1
+  itemDrops: []
   spawnMesh: {fileID: 1022625529149906712, guid: 3163e18277a671642977b60915a6a5bf, type: 3}
   respawnTime: 20
 --- !u!4 &427182641
@@ -798,15 +781,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b2a5002e4c648cf47bc835708f82debf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  objectsToSpawn:
-  - objectToSpawn: {fileID: 2113318067594780206, guid: d02d8a98d19338e4facbdaec96a51db8, type: 3}
-    weight: 200
-  - objectToSpawn: {fileID: 5888055944035769684, guid: e9b4ebc0f18fe154e92af25cd678ad6e, type: 3}
-    weight: 100
-  - objectToSpawn: {fileID: 5262504219547872635, guid: b269d14f4208ebd488ad57912e5e8589, type: 3}
-    weight: 10
-  - objectToSpawn: {fileID: 3613562258175810038, guid: 65459eed94ba9c748942483e73d21625, type: 3}
-    weight: 1
+  itemDrops: []
   spawnMesh: {fileID: 0}
   respawnTime: 2
 --- !u!4 &508926377
@@ -3369,15 +3344,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b2a5002e4c648cf47bc835708f82debf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  objectsToSpawn:
-  - objectToSpawn: {fileID: 2113318067594780206, guid: d02d8a98d19338e4facbdaec96a51db8, type: 3}
-    weight: 200
-  - objectToSpawn: {fileID: 5888055944035769684, guid: e9b4ebc0f18fe154e92af25cd678ad6e, type: 3}
-    weight: 100
-  - objectToSpawn: {fileID: 5262504219547872635, guid: b269d14f4208ebd488ad57912e5e8589, type: 3}
-    weight: 10
-  - objectToSpawn: {fileID: 3613562258175810038, guid: 65459eed94ba9c748942483e73d21625, type: 3}
-    weight: 1
+  itemDrops: []
   spawnMesh: {fileID: 0}
   respawnTime: 8
 --- !u!4 &1303195780
@@ -3618,9 +3585,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b2a5002e4c648cf47bc835708f82debf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  objectsToSpawn:
-  - objectToSpawn: {fileID: 3650161032140658048, guid: f735f7f1d8c95f741b44f1f455ad9a00, type: 3}
-    weight: 1
+  itemDrops: []
   spawnMesh: {fileID: 1022625529149906712, guid: 3163e18277a671642977b60915a6a5bf, type: 3}
   respawnTime: 20
 --- !u!4 &1431895306
@@ -3682,6 +3647,32 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a8ae216bbc6a70349938c07439abb563, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!1 &1597497635 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 6913995864626863008, guid: f735f7f1d8c95f741b44f1f455ad9a00, type: 3}
+  m_PrefabInstance: {fileID: 4496443795752663502}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1597497636
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1597497635}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b2a5002e4c648cf47bc835708f82debf, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  itemDrops:
+  - objectToSpawn: {fileID: 2113318067594780206, guid: d02d8a98d19338e4facbdaec96a51db8, type: 3}
+    weight: 50
+  - objectToSpawn: {fileID: 5262504219547872635, guid: b269d14f4208ebd488ad57912e5e8589, type: 3}
+    weight: 10
+  - objectToSpawn: {fileID: 3613562258175810038, guid: 65459eed94ba9c748942483e73d21625, type: 3}
+    weight: 1
+  spawnMesh: {fileID: 0}
+  respawnTime: 1
 --- !u!4 &1757456446 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 7692940010389624738, guid: e8eea70ea4b539d4bb6e06f020050953, type: 3}
@@ -3716,9 +3707,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b2a5002e4c648cf47bc835708f82debf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  objectsToSpawn:
-  - objectToSpawn: {fileID: 3650161032140658048, guid: f735f7f1d8c95f741b44f1f455ad9a00, type: 3}
-    weight: 1
+  itemDrops: []
   spawnMesh: {fileID: 1022625529149906712, guid: 3163e18277a671642977b60915a6a5bf, type: 3}
   respawnTime: 20
 --- !u!4 &1770195997
@@ -3735,6 +3724,36 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 23
   m_LocalEulerAnglesHint: {x: 0, y: 160.76, z: 0}
+--- !u!1 &1843484998
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1843485000}
+  m_Layer: 0
+  m_Name: PlayerSpawner
+  m_TagString: Untagged
+  m_Icon: {fileID: 4422084297763085224, guid: 0000000000000000d000000000000000, type: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1843485000
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1843484998}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0.26, z: 0.59}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 24
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1843811118
 GameObject:
   m_ObjectHideFlags: 0
@@ -3764,15 +3783,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b2a5002e4c648cf47bc835708f82debf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  objectsToSpawn:
-  - objectToSpawn: {fileID: 2113318067594780206, guid: d02d8a98d19338e4facbdaec96a51db8, type: 3}
-    weight: 200
-  - objectToSpawn: {fileID: 5888055944035769684, guid: e9b4ebc0f18fe154e92af25cd678ad6e, type: 3}
-    weight: 100
-  - objectToSpawn: {fileID: 5262504219547872635, guid: b269d14f4208ebd488ad57912e5e8589, type: 3}
-    weight: 10
-  - objectToSpawn: {fileID: 3613562258175810038, guid: 65459eed94ba9c748942483e73d21625, type: 3}
-    weight: 1
+  itemDrops: []
   spawnMesh: {fileID: 0}
   respawnTime: 5
 --- !u!4 &1843811120
@@ -4048,58 +4059,6 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2046722534}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
---- !u!1 &2055948279
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 2055948280}
-  - component: {fileID: 2055948281}
-  m_Layer: 7
-  m_Name: WeaponSpawner
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &2055948280
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2055948279}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 33256664}
-  m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &2055948281
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2055948279}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b2a5002e4c648cf47bc835708f82debf, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  objectsToSpawn:
-  - objectToSpawn: {fileID: 2113318067594780206, guid: d02d8a98d19338e4facbdaec96a51db8, type: 3}
-    weight: 100
-  - objectToSpawn: {fileID: 5262504219547872635, guid: b269d14f4208ebd488ad57912e5e8589, type: 3}
-    weight: 10
-  - objectToSpawn: {fileID: 3613562258175810038, guid: 65459eed94ba9c748942483e73d21625, type: 3}
-    weight: 1
-  spawnMesh: {fileID: 0}
-  respawnTime: 0
 --- !u!1 &2107191129
 GameObject:
   m_ObjectHideFlags: 0
@@ -4335,6 +4294,34 @@ PrefabInstance:
       propertyPath: projectileMoveSpeed
       value: 10
       objectReference: {fileID: 0}
+    - target: {fileID: 4496443797129822505, guid: f735f7f1d8c95f741b44f1f455ad9a00, type: 3}
+      propertyPath: onDie.m_PersistentCalls.m_Calls.Array.size
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 4496443797129822505, guid: f735f7f1d8c95f741b44f1f455ad9a00, type: 3}
+      propertyPath: onDie.m_PersistentCalls.m_Calls.Array.data[3].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4496443797129822505, guid: f735f7f1d8c95f741b44f1f455ad9a00, type: 3}
+      propertyPath: onDie.m_PersistentCalls.m_Calls.Array.data[3].m_Target
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 4496443797129822505, guid: f735f7f1d8c95f741b44f1f455ad9a00, type: 3}
+      propertyPath: onDie.m_PersistentCalls.m_Calls.Array.data[3].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 4496443797129822505, guid: f735f7f1d8c95f741b44f1f455ad9a00, type: 3}
+      propertyPath: onDie.m_PersistentCalls.m_Calls.Array.data[3].m_MethodName
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 4496443797129822505, guid: f735f7f1d8c95f741b44f1f455ad9a00, type: 3}
+      propertyPath: onDie.m_PersistentCalls.m_Calls.Array.data[3].m_TargetAssemblyTypeName
+      value: EnemyHealth, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 4496443797129822505, guid: f735f7f1d8c95f741b44f1f455ad9a00, type: 3}
+      propertyPath: onDie.m_PersistentCalls.m_Calls.Array.data[3].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: 
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f735f7f1d8c95f741b44f1f455ad9a00, type: 3}
 --- !u!1001 &7023263438453327946
@@ -4356,6 +4343,34 @@ PrefabInstance:
       propertyPath: healthBarImage
       value: 
       objectReference: {fileID: 839197100}
+    - target: {fileID: 12039192527270304, guid: d4f22f674a521d144b7184e875d3f294, type: 3}
+      propertyPath: onDie.m_PersistentCalls.m_Calls.Array.size
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 12039192527270304, guid: d4f22f674a521d144b7184e875d3f294, type: 3}
+      propertyPath: onDie.m_PersistentCalls.m_Calls.Array.data[3].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 12039192527270304, guid: d4f22f674a521d144b7184e875d3f294, type: 3}
+      propertyPath: onDie.m_PersistentCalls.m_Calls.Array.data[3].m_Target
+      value: 
+      objectReference: {fileID: 1843484998}
+    - target: {fileID: 12039192527270304, guid: d4f22f674a521d144b7184e875d3f294, type: 3}
+      propertyPath: onDie.m_PersistentCalls.m_Calls.Array.data[3].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 12039192527270304, guid: d4f22f674a521d144b7184e875d3f294, type: 3}
+      propertyPath: onDie.m_PersistentCalls.m_Calls.Array.data[3].m_MethodName
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 12039192527270304, guid: d4f22f674a521d144b7184e875d3f294, type: 3}
+      propertyPath: onDie.m_PersistentCalls.m_Calls.Array.data[3].m_TargetAssemblyTypeName
+      value: Health, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 12039192527270304, guid: d4f22f674a521d144b7184e875d3f294, type: 3}
+      propertyPath: onDie.m_PersistentCalls.m_Calls.Array.data[3].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: 
+      objectReference: {fileID: 0}
     - target: {fileID: 7023263438458811068, guid: d4f22f674a521d144b7184e875d3f294, type: 3}
       propertyPath: playerCamera
       value: 
