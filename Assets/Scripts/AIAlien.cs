@@ -29,6 +29,8 @@ public class AIAlien : AIController
     [Header("Target")]
     public PlayerController player;
 
+    public GameObject[] listOfWeapons;
+
     // Awake is called when the object is created
     public override void Awake()
     {
@@ -37,6 +39,8 @@ public class AIAlien : AIController
         // Load my components
         agent = GetComponent<NavMeshAgent>();
         pawn = GetComponent<Pawn>();
+
+        pawn.EquipWeapon(listOfWeapons[Random.Range(0, listOfWeapons.Length)]);
     }
     // Start is called before the first frame update
     public override void Start()

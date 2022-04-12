@@ -10,8 +10,10 @@ public class GenericSpawner : MonoBehaviour
     [Header("Data")]
     public float respawnTime;
 
-    private GameObject spawnedObject;
+    public GameObject spawnedObject;
     private float countDown;
+
+    public bool automaticallyDrop = true;
 
     // Start is called before the first frame update
     void Start()
@@ -34,7 +36,7 @@ public class GenericSpawner : MonoBehaviour
             countDown -= Time.deltaTime;
 
             // If our countdown hits zero
-            if (countDown <= 0)
+            if (countDown <= 0 && automaticallyDrop)
             {
                 // Spawn (and store) the object
                 spawnedObject = Instantiate(ChooseSpawnObject(), transform.position, transform.rotation) as GameObject;

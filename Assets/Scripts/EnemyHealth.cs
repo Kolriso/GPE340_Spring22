@@ -22,6 +22,8 @@ public class EnemyHealth : MonoBehaviour
 
     private Pawn pawn;
 
+    public GenericSpawner spawner;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -29,6 +31,7 @@ public class EnemyHealth : MonoBehaviour
         currentHealth = maxHealth;
         ragdoll = GetComponent<RagdollController>();
         pawn = GetComponent<Pawn>();
+        //spawner = GetComponent<Spawner>()
     }
 
     // Update is called once per frame
@@ -42,6 +45,18 @@ public class EnemyHealth : MonoBehaviour
                 Destroy(gameObject);
             }
         }
+
+        print(gameObject.name);
+
+        if(Input.GetKeyDown(KeyCode.K) && spawner != null)
+        {
+            
+        }
+    }
+
+    public void DropWeapon()
+    {
+        spawner.spawnedObject = Instantiate(spawner.ChooseSpawnObject(), transform.position, transform.rotation) as GameObject;
     }
 
     public void TurnOffAIController()

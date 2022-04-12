@@ -1314,6 +1314,7 @@ GameObject:
   - component: {fileID: 4496443797129822501}
   - component: {fileID: 1368134652680616533}
   - component: {fileID: 6817648696759474844}
+  - component: {fileID: 185972866}
   m_Layer: 7
   m_Name: Enemy
   m_TagString: Untagged
@@ -1420,16 +1421,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b6d773b5691303d41a99dc5f0ce55f66, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  firePoint: {fileID: 0}
-  projectilePrefab: {fileID: 570761110685845075, guid: 33d95cb140e093646b719559e5fcf64a, type: 3}
-  projectileMoveSpeed: 10
-  projectileLifeSpan: 1
   leadModifier: 1
   timeBetweenNavigationChecks: 0.5
   maxShootingError: 1
   minShootDistance: 2
   maxShootDistance: 25
   player: {fileID: 0}
+  listOfWeapons:
+  - {fileID: 6172262052033331081, guid: 6687c864db08b5c4baeca41cbff0bef8, type: 3}
+  - {fileID: 2758013877739324198, guid: fc18591c70ab9214b849328fb7bda279, type: 3}
+  - {fileID: 3613562258175810038, guid: 65459eed94ba9c748942483e73d21625, type: 3}
 --- !u!114 &4496443797129822505
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1484,9 +1485,22 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-  maxHealth: 200
+      - m_Target: {fileID: 4496443797129822505}
+        m_TargetAssemblyTypeName: EnemyHealth, Assembly-CSharp
+        m_MethodName: DropWeapon
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+  maxHealth: 100
   currentHealth: 0
   delayTimer: 3
+  spawner: {fileID: 185972866}
 --- !u!114 &4496443797129822501
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1529,6 +1543,29 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isRagdoll: 0
+--- !u!114 &185972866
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3650161032140658048}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b2a5002e4c648cf47bc835708f82debf, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  itemDrops:
+  - objectToSpawn: {fileID: 2113318067594780206, guid: d02d8a98d19338e4facbdaec96a51db8, type: 3}
+    weight: 10
+  - objectToSpawn: {fileID: 5262504219547872635, guid: b269d14f4208ebd488ad57912e5e8589, type: 3}
+    weight: 10
+  - objectToSpawn: {fileID: 3613562258175810038, guid: 65459eed94ba9c748942483e73d21625, type: 3}
+    weight: 10
+  spawnMesh: {fileID: 0}
+  respawnTime: 1
+  spawnedObject: {fileID: 0}
+  automaticallyDrop: 0
 --- !u!1 &4312669900086771953
 GameObject:
   m_ObjectHideFlags: 0

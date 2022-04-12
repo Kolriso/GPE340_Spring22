@@ -437,9 +437,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b2a5002e4c648cf47bc835708f82debf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  itemDrops: []
+  itemDrops:
+  - objectToSpawn: {fileID: 3650161032140658048, guid: f735f7f1d8c95f741b44f1f455ad9a00, type: 3}
+    weight: 1
   spawnMesh: {fileID: 1022625529149906712, guid: 3163e18277a671642977b60915a6a5bf, type: 3}
   respawnTime: 20
+  spawnedObject: {fileID: 0}
+  automaticallyDrop: 1
 --- !u!4 &154485510
 Transform:
   m_ObjectHideFlags: 0
@@ -483,9 +487,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b2a5002e4c648cf47bc835708f82debf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  itemDrops: []
+  itemDrops:
+  - objectToSpawn: {fileID: 2113318067594780206, guid: d02d8a98d19338e4facbdaec96a51db8, type: 3}
+    weight: 200
+  - objectToSpawn: {fileID: 5888055944035769684, guid: e9b4ebc0f18fe154e92af25cd678ad6e, type: 3}
+    weight: 100
+  - objectToSpawn: {fileID: 5262504219547872635, guid: b269d14f4208ebd488ad57912e5e8589, type: 3}
+    weight: 50
+  - objectToSpawn: {fileID: 3613562258175810038, guid: 65459eed94ba9c748942483e73d21625, type: 3}
+    weight: 10
   spawnMesh: {fileID: 0}
   respawnTime: 10
+  spawnedObject: {fileID: 0}
+  automaticallyDrop: 1
 --- !u!4 &276647585
 Transform:
   m_ObjectHideFlags: 0
@@ -735,9 +749,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b2a5002e4c648cf47bc835708f82debf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  itemDrops: []
+  itemDrops:
+  - objectToSpawn: {fileID: 3650161032140658048, guid: f735f7f1d8c95f741b44f1f455ad9a00, type: 3}
+    weight: 1
   spawnMesh: {fileID: 1022625529149906712, guid: 3163e18277a671642977b60915a6a5bf, type: 3}
   respawnTime: 20
+  spawnedObject: {fileID: 0}
+  automaticallyDrop: 1
 --- !u!4 &427182641
 Transform:
   m_ObjectHideFlags: 0
@@ -781,9 +799,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b2a5002e4c648cf47bc835708f82debf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  itemDrops: []
+  itemDrops:
+  - objectToSpawn: {fileID: 2113318067594780206, guid: d02d8a98d19338e4facbdaec96a51db8, type: 3}
+    weight: 200
+  - objectToSpawn: {fileID: 5888055944035769684, guid: e9b4ebc0f18fe154e92af25cd678ad6e, type: 3}
+    weight: 100
+  - objectToSpawn: {fileID: 5262504219547872635, guid: b269d14f4208ebd488ad57912e5e8589, type: 3}
+    weight: 50
+  - objectToSpawn: {fileID: 3613562258175810038, guid: 65459eed94ba9c748942483e73d21625, type: 3}
+    weight: 10
   spawnMesh: {fileID: 0}
   respawnTime: 2
+  spawnedObject: {fileID: 0}
+  automaticallyDrop: 1
 --- !u!4 &508926377
 Transform:
   m_ObjectHideFlags: 0
@@ -1688,7 +1716,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 1
   m_StaticEditorFlags: 8
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &678502714
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1823,6 +1851,7 @@ MonoBehaviour:
   maxHealth: 100
   currentHealth: 0
   delayTimer: 1
+  spawner: {fileID: 0}
 --- !u!1 &705507993
 GameObject:
   m_ObjectHideFlags: 0
@@ -3344,9 +3373,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b2a5002e4c648cf47bc835708f82debf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  itemDrops: []
+  itemDrops:
+  - objectToSpawn: {fileID: 2113318067594780206, guid: d02d8a98d19338e4facbdaec96a51db8, type: 3}
+    weight: 200
+  - objectToSpawn: {fileID: 5888055944035769684, guid: e9b4ebc0f18fe154e92af25cd678ad6e, type: 3}
+    weight: 100
+  - objectToSpawn: {fileID: 5262504219547872635, guid: b269d14f4208ebd488ad57912e5e8589, type: 3}
+    weight: 50
+  - objectToSpawn: {fileID: 3613562258175810038, guid: 65459eed94ba9c748942483e73d21625, type: 3}
+    weight: 10
   spawnMesh: {fileID: 0}
   respawnTime: 8
+  spawnedObject: {fileID: 0}
+  automaticallyDrop: 1
 --- !u!4 &1303195780
 Transform:
   m_ObjectHideFlags: 0
@@ -3585,9 +3624,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b2a5002e4c648cf47bc835708f82debf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  itemDrops: []
+  itemDrops:
+  - objectToSpawn: {fileID: 3650161032140658048, guid: f735f7f1d8c95f741b44f1f455ad9a00, type: 3}
+    weight: 1
   spawnMesh: {fileID: 1022625529149906712, guid: 3163e18277a671642977b60915a6a5bf, type: 3}
   respawnTime: 20
+  spawnedObject: {fileID: 0}
+  automaticallyDrop: 1
 --- !u!4 &1431895306
 Transform:
   m_ObjectHideFlags: 0
@@ -3647,32 +3690,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a8ae216bbc6a70349938c07439abb563, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!1 &1597497635 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 6913995864626863008, guid: f735f7f1d8c95f741b44f1f455ad9a00, type: 3}
-  m_PrefabInstance: {fileID: 4496443795752663502}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &1597497636
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1597497635}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b2a5002e4c648cf47bc835708f82debf, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  itemDrops:
-  - objectToSpawn: {fileID: 2113318067594780206, guid: d02d8a98d19338e4facbdaec96a51db8, type: 3}
-    weight: 50
-  - objectToSpawn: {fileID: 5262504219547872635, guid: b269d14f4208ebd488ad57912e5e8589, type: 3}
-    weight: 10
-  - objectToSpawn: {fileID: 3613562258175810038, guid: 65459eed94ba9c748942483e73d21625, type: 3}
-    weight: 1
-  spawnMesh: {fileID: 0}
-  respawnTime: 1
 --- !u!4 &1757456446 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 7692940010389624738, guid: e8eea70ea4b539d4bb6e06f020050953, type: 3}
@@ -3707,9 +3724,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b2a5002e4c648cf47bc835708f82debf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  itemDrops: []
+  itemDrops:
+  - objectToSpawn: {fileID: 3650161032140658048, guid: f735f7f1d8c95f741b44f1f455ad9a00, type: 3}
+    weight: 1
   spawnMesh: {fileID: 1022625529149906712, guid: 3163e18277a671642977b60915a6a5bf, type: 3}
   respawnTime: 20
+  spawnedObject: {fileID: 0}
+  automaticallyDrop: 1
 --- !u!4 &1770195997
 Transform:
   m_ObjectHideFlags: 0
@@ -3783,9 +3804,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b2a5002e4c648cf47bc835708f82debf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  itemDrops: []
+  itemDrops:
+  - objectToSpawn: {fileID: 2113318067594780206, guid: d02d8a98d19338e4facbdaec96a51db8, type: 3}
+    weight: 200
+  - objectToSpawn: {fileID: 5888055944035769684, guid: e9b4ebc0f18fe154e92af25cd678ad6e, type: 3}
+    weight: 100
+  - objectToSpawn: {fileID: 5262504219547872635, guid: b269d14f4208ebd488ad57912e5e8589, type: 3}
+    weight: 50
+  - objectToSpawn: {fileID: 3613562258175810038, guid: 65459eed94ba9c748942483e73d21625, type: 3}
+    weight: 10
   spawnMesh: {fileID: 0}
   respawnTime: 5
+  spawnedObject: {fileID: 0}
+  automaticallyDrop: 1
 --- !u!4 &1843811120
 Transform:
   m_ObjectHideFlags: 0
@@ -4282,46 +4313,6 @@ PrefabInstance:
       propertyPath: player
       value: 
       objectReference: {fileID: 421732264}
-    - target: {fileID: 4496443797129822504, guid: f735f7f1d8c95f741b44f1f455ad9a00, type: 3}
-      propertyPath: projectilePrefab
-      value: 
-      objectReference: {fileID: 570761110685845075, guid: 33d95cb140e093646b719559e5fcf64a, type: 3}
-    - target: {fileID: 4496443797129822504, guid: f735f7f1d8c95f741b44f1f455ad9a00, type: 3}
-      propertyPath: projectileLifeSpan
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 4496443797129822504, guid: f735f7f1d8c95f741b44f1f455ad9a00, type: 3}
-      propertyPath: projectileMoveSpeed
-      value: 10
-      objectReference: {fileID: 0}
-    - target: {fileID: 4496443797129822505, guid: f735f7f1d8c95f741b44f1f455ad9a00, type: 3}
-      propertyPath: onDie.m_PersistentCalls.m_Calls.Array.size
-      value: 4
-      objectReference: {fileID: 0}
-    - target: {fileID: 4496443797129822505, guid: f735f7f1d8c95f741b44f1f455ad9a00, type: 3}
-      propertyPath: onDie.m_PersistentCalls.m_Calls.Array.data[3].m_Mode
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 4496443797129822505, guid: f735f7f1d8c95f741b44f1f455ad9a00, type: 3}
-      propertyPath: onDie.m_PersistentCalls.m_Calls.Array.data[3].m_Target
-      value: 
-      objectReference: {fileID: 0}
-    - target: {fileID: 4496443797129822505, guid: f735f7f1d8c95f741b44f1f455ad9a00, type: 3}
-      propertyPath: onDie.m_PersistentCalls.m_Calls.Array.data[3].m_CallState
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 4496443797129822505, guid: f735f7f1d8c95f741b44f1f455ad9a00, type: 3}
-      propertyPath: onDie.m_PersistentCalls.m_Calls.Array.data[3].m_MethodName
-      value: 
-      objectReference: {fileID: 0}
-    - target: {fileID: 4496443797129822505, guid: f735f7f1d8c95f741b44f1f455ad9a00, type: 3}
-      propertyPath: onDie.m_PersistentCalls.m_Calls.Array.data[3].m_TargetAssemblyTypeName
-      value: EnemyHealth, Assembly-CSharp
-      objectReference: {fileID: 0}
-    - target: {fileID: 4496443797129822505, guid: f735f7f1d8c95f741b44f1f455ad9a00, type: 3}
-      propertyPath: onDie.m_PersistentCalls.m_Calls.Array.data[3].m_Arguments.m_ObjectArgumentAssemblyTypeName
-      value: 
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f735f7f1d8c95f741b44f1f455ad9a00, type: 3}
 --- !u!1001 &7023263438453327946
