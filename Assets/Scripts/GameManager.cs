@@ -47,6 +47,7 @@ public class GameManager : MonoBehaviour
         GameObject playerObject = Instantiate(playerPrefab, playerSpawnPoint.position, Quaternion.identity) as GameObject;
         player.pawn = playerObject.GetComponent<Pawn>();
         player.lives--;
+        uiManager.LooseHeart();
     }
 
     // Start game starts when gameplay starts
