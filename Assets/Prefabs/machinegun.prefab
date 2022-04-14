@@ -101,6 +101,7 @@ MonoBehaviour:
   fireDelay: 0
   countDown: 0
   damageDone: 0
+  weaponSprite: {fileID: 0}
   RHPoint: {fileID: 0}
   LHPoint: {fileID: 0}
   firePoint: {fileID: 0}
@@ -285,6 +286,7 @@ MonoBehaviour:
   fireDelay: 0.3
   countDown: 0.3
   damageDone: 10
+  weaponSprite: {fileID: 21300000, guid: d2c26f01960e7ef4983085bc3a11a986, type: 3}
   RHPoint: {fileID: 8853746732910401773}
   LHPoint: {fileID: 6257482211586614348}
   firePoint: {fileID: 7099133110826886776}

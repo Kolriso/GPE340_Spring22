@@ -73,7 +73,7 @@ public class AIAlien : AIController
 
     public void SetLeadVector()
     {
-        if (player.pawn != null)
+        if (GameManager.instance.player.isDead == false)
         {
             // Find the distance to the player
             float distanceToPlayer = Vector3.Distance(player.transform.position, pawn.transform.position);

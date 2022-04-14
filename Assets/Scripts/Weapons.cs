@@ -19,6 +19,7 @@ public class Weapons : MonoBehaviour
     public float fireDelay; // Seconds between shots
     public float countDown;
     public float damageDone;
+    public Sprite weaponSprite;
     [Header("Hand Position")]
     public Transform RHPoint;
     public Transform LHPoint;

@@ -350,6 +350,7 @@ MonoBehaviour:
   fireDelay: 2
   countDown: 0
   damageDone: 15
+  weaponSprite: {fileID: 21300000, guid: e4c71ddaab1bcee4d80dc9c1efac6358, type: 3}
   RHPoint: {fileID: 6920311976236485564}
   LHPoint: {fileID: 7975232240908724725}
   firePoint: {fileID: 4313244817361775360}

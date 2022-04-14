@@ -15,6 +15,8 @@ public class PlayerController : MonoBehaviour
     [Header("Player Lives")]
     public int lives;
 
+    public bool isDead = false;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -25,6 +27,8 @@ public class PlayerController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        
+
         if (pawn != null)
         {
             // Send my move command to my pawn
@@ -58,6 +62,17 @@ public class PlayerController : MonoBehaviour
 
             // Rotate player to face the mouse
             RotateToMouse();
+
+
+            if (pawn.health.currentHealth <= 0)
+            {
+                isDead = true;
+            }
+            else
+            {
+                isDead = false;
+            }
+
         }
     }
 

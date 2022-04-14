@@ -11,6 +11,7 @@ public class UIManager : MonoBehaviour
     public Image healthBarImage;
     public bool isPaused = false;
     public GameObject pauseMenu;
+    public Image weaponSprite;
 
 
     // Start is called before the first frame update
@@ -22,6 +23,9 @@ public class UIManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+
+        UpdateWeaponImage();
+
         if (Input.GetButtonDown("Cancel"))
         {
             if (isPaused == false)
@@ -42,6 +46,11 @@ public class UIManager : MonoBehaviour
     public void ShowGameOverScreen()
     {
         restartGame.ShowCanvas();
+    }
+
+    public void UpdateWeaponImage()
+    {
+        weaponSprite.sprite = player.pawn.weapon.weaponSprite;
     }
 
     public void UpdateHealthBar(float currentHealth, float maxHealth)
