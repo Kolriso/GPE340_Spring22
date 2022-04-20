@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class UIManager : MonoBehaviour
 {
@@ -12,12 +13,22 @@ public class UIManager : MonoBehaviour
     public bool isPaused = false;
     public GameObject pauseMenu;
     public Image weaponSprite;
+    public Image splashImage;
+    public string loadLevel;
 
 
     // Start is called before the first frame update
-    void Start()
+    IEnumerator Start()
     {
         restartGame = FindObjectOfType<ResetButton>();
+
+        splashImage.canvasRenderer.SetAlpha(0.0f);
+
+        FadeIn();
+        yield return new WaitForSeconds(2.5f);
+        FadeOut();
+        yield return new WaitForSeconds(2.5f);
+        SceneManager.LoadScene(loadLevel);
     }
 
     // Update is called once per frame
@@ -41,6 +52,16 @@ public class UIManager : MonoBehaviour
                 Time.timeScale = 1;
             }
         }
+    }
+
+    public void FadeIn()
+    {
+        splashImage.CrossFadeAlpha(1.0f, 1.5f, false);
+    }
+
+    public void FadeOut()
+    {
+        splashImage.CrossFadeAlpha(0.0f, 2.5f, false);
     }
 
     public void ShowGameOverScreen()
