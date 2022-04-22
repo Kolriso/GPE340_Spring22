@@ -2782,8 +2782,6 @@ MonoBehaviour:
   maxHealth: 100
   currentHealth: 0
   delayTimer: 10
-  lives: 0
-  healthBarImage: {fileID: 0}
   player: {fileID: 574550744091725691}
 --- !u!114 &574550744091725691
 MonoBehaviour:
