@@ -8,18 +8,21 @@ public class UIManager : MonoBehaviour
 {
     public GameObject[] hearts;
     public PlayerController player;
-    private ResetButton restartGame;
+    //private ResetButton restartGame;
     public Image healthBarImage;
     public bool isPaused = false;
     public GameObject pauseMenu;
     public Image weaponSprite;
+    public GameObject creditsScreen;
+    public GameObject HUD;
+    public string loadLevel;
 
     // Start is called before the first frame update
     void Start()
     {
         GameManager.instance.uiManager = this;
 
-        restartGame = FindObjectOfType<ResetButton>();
+        //restartGame = FindObjectOfType<ResetButton>();
     }
 
     // Update is called once per frame
@@ -47,7 +50,14 @@ public class UIManager : MonoBehaviour
 
     public void ShowGameOverScreen()
     {
-        restartGame.ShowCanvas();
+        //restartGame.ShowCanvas();
+        HUD.SetActive(false);
+        creditsScreen.SetActive(true);
+    }
+
+    public void BackToMainMenu()
+    {
+        SceneManager.LoadScene(loadLevel);
     }
 
     public void UpdateWeaponImage()

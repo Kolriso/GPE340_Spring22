@@ -14,6 +14,7 @@ public class GameManager : MonoBehaviour
     [Header("Player Data")]
     public PlayerController player;
     public int startingLives = 3;
+    private bool isDead;
 
     [Header("UI")]
     public UIManager uiManager;
@@ -55,11 +56,13 @@ public class GameManager : MonoBehaviour
     {
         isGamePlaying = true;
         player.lives = startingLives;
+        isDead = false;
     }
 
     public void EndGame()
     {
-
+        isGamePlaying = false;
+        isDead = true;
     }
 
     // Update is called once per frame
@@ -81,6 +84,7 @@ public class GameManager : MonoBehaviour
                 else
                 {
                     uiManager.ShowGameOverScreen();
+                    EndGame();
                 }
             }
         }
