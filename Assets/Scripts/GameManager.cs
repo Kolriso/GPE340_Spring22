@@ -20,6 +20,8 @@ public class GameManager : MonoBehaviour
     public UIManager uiManager;
     public bool isGamePlaying = false;
 
+    private bool loadingGame = false;
+
     private void Awake()
     {
         // The first Game manager
@@ -40,7 +42,16 @@ public class GameManager : MonoBehaviour
     {
         // Show main menu
         // Temp Delete Me--Start the game immediately
-        StartGame();
+       // StartGame();
+    }
+
+    private void OnLevelWasLoaded(int level)
+    {
+        if(level == 2)
+        {
+            isGamePlaying = true;
+            isDead = false;
+        }
     }
 
     public void SpawnPlayer()
@@ -63,11 +74,29 @@ public class GameManager : MonoBehaviour
     {
         isGamePlaying = false;
         isDead = true;
+        loadingGame = true;
     }
 
     // Update is called once per frame
     void Update()
     {
+        if (playerSpawnPoint == null && isGamePlaying && GameObject.Find("PlayerSpawner") != null)
+        {
+            playerSpawnPoint = GameObject.Find("PlayerSpawner").transform;
+        }
+
+        if (player == null && isGamePlaying)
+        {
+            player = FindObjectOfType<PlayerController>();
+        }
+
+        StartCoroutine(DelayRespawn());
+
+    }
+
+    public IEnumerator DelayRespawn()
+    {
+        yield return new WaitForSeconds(1);
         CheckForRespawn();
     }
 
@@ -75,16 +104,19 @@ public class GameManager : MonoBehaviour
     {
         if (isGamePlaying)
         {
-            if (player.pawn == null)
+            if (player != null)
             {
-                if (player.lives > 0)
+                if (player.pawn == null)
                 {
-                    SpawnPlayer();
-                }
-                else
-                {
-                    uiManager.ShowGameOverScreen();
-                    EndGame();
+                    if (player.lives > 0)
+                    {
+                        SpawnPlayer();
+                    }
+                    else
+                    {
+                        uiManager.ShowGameOverScreen();
+                        EndGame();
+                    }
                 }
             }
         }

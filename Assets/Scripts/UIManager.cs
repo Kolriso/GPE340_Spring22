@@ -29,7 +29,7 @@ public class UIManager : MonoBehaviour
     void Update()
     {
 
-        UpdateWeaponImage();
+        
 
         if (Input.GetButtonDown("Cancel"))
         {
@@ -46,6 +46,7 @@ public class UIManager : MonoBehaviour
                 Time.timeScale = 1;
             }
         }
+        UpdateWeaponImage();
     }
 
     public void ShowGameOverScreen()
@@ -62,7 +63,8 @@ public class UIManager : MonoBehaviour
 
     public void UpdateWeaponImage()
     {
-        weaponSprite.sprite = player.pawn.weapon.weaponSprite;
+        //if (GameManager.instance.player.pawn.weapon == null || GameManager.instance.player.pawn == null || GameManager.instance.player == null) return;
+        //weaponSprite.sprite = player.pawn.weapon.weaponSprite;
     }
 
     public void UpdateHealthBar(float currentHealth, float maxHealth)

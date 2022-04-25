@@ -15,6 +15,8 @@ public class MainMenuManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        
+
         // Getting the resolutions from your computer
         resolutions = Screen.resolutions;
         // Clears the option in the Dropdown already
@@ -48,7 +50,10 @@ public class MainMenuManager : MonoBehaviour
 
     public void StartNewGame()
     {
+        if (GameManager.instance != null)
+            GameManager.instance.isGamePlaying = true;
         SceneManager.LoadScene(loadLevel);
+
     }
 
     public void SetMasterVolume(float volume)

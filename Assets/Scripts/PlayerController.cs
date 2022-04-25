@@ -22,6 +22,7 @@ public class PlayerController : MonoBehaviour
     {
         // An if statement to check whether or not a camera is hooked up
         if (playerCamera == null) Debug.LogWarning("Error: No camera set!");
+        lives = GameManager.instance.startingLives;
     }
 
     // Update is called once per frame

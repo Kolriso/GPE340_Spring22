@@ -13,7 +13,7 @@ public class CameraController : MonoBehaviour
     void Start()
     {
         // Hook up the GameObject to the pawn
-        if (GameManager.instance.player.pawn == null) Debug.LogWarning ("Character not connected"); 
+        //if (GameManager.instance.player.pawn == null) Debug.LogWarning ("Character not connected"); 
 
        // Calculate and store the offset value by getting the distance between the player's position and camera's position.
        //offset = transform.position - GameManager.instance.player.pawn.transform.position;
@@ -26,6 +26,10 @@ public class CameraController : MonoBehaviour
         {
             // Set the position of the camera's transform to be the same as the player's, but offset by the calculated offset distance.
             transform.position = GameManager.instance.player.pawn.transform.position + offset;
+        }
+        else
+        {
+            return;
         }
     }
 }

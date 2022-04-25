@@ -28,6 +28,10 @@ public class WeaponPickup : Pickups
             otherPawn.EquipWeapon(weaponToPickup);
         }
 
+
+        if (other.gameObject.layer == 6)
+            GameManager.instance.uiManager.weaponSprite.sprite = weaponToPickup.GetComponent<Weapons>().weaponSprite;
+
         base.OnTriggerEnter(other);
     }
 }

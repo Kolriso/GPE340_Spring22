@@ -28,6 +28,7 @@ public class Weapons : MonoBehaviour
    public virtual void Start()
     {
         countDown = fireDelay;
+
     }
 
     // Update is called once per frame
