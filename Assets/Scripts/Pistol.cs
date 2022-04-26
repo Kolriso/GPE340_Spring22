@@ -13,12 +13,14 @@ public class Pistol : Weapons
     [Header("Data")]
     public float projectileMoveSpeed;
     public float projectileLifeSpan;
+    AudioSource pistolSound;
 
     // Start is called before the first frame update
     public override void Start()
     {
         // Run the start function from the parent class
         base.Start();
+        pistolSound = GetComponent<AudioSource>();
     }
 
     // Update is called once per frame
@@ -30,6 +32,7 @@ public class Pistol : Weapons
 
     public void ShootBullet()
     {
+        pistolSound.Play();
         // Instantiate a bullet at the fire location of this rifle
         GameObject projectile = Instantiate(projectilePrefab, firePoint.position, firePoint.rotation) as GameObject;
         Projectile projectileScript = projectile.GetComponent<Projectile>();

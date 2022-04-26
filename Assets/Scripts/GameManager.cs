@@ -14,7 +14,7 @@ public class GameManager : MonoBehaviour
     [Header("Player Data")]
     public PlayerController player;
     public int startingLives = 3;
-    private bool isDead;
+    private bool isDead = false;
 
     [Header("UI")]
     public UIManager uiManager;
@@ -42,7 +42,7 @@ public class GameManager : MonoBehaviour
     {
         // Show main menu
         // Temp Delete Me--Start the game immediately
-       // StartGame();
+        StartGame();
     }
 
     private void OnLevelWasLoaded(int level)

@@ -13,12 +13,14 @@ public class M16 : Weapons
     [Header("Data")]
     public float projectileMoveSpeed;
     public float projectileLifeSpan;
+    AudioSource machineGunSound;
 
     // Start is called before the first frame update
     public override void Start()
     {
         // Run the start function from the parent class
         base.Start();
+        machineGunSound = GetComponent<AudioSource>();
     }
 
     // Update is called once per frame
@@ -30,6 +32,7 @@ public class M16 : Weapons
 
     public void ShootBullet()
     {
+        machineGunSound.Play();
         // Instantiate a bullet at the fire location of this rifle
         GameObject projectile = Instantiate(projectilePrefab, firePoint.position, firePoint.rotation) as GameObject;
         Projectile projectileScript = projectile.GetComponent<Projectile>();
@@ -47,6 +50,7 @@ public class M16 : Weapons
 
     public void ShootAutomatic()
     {
+        machineGunSound.Play();
         // Instantiate a bullet at the fire location of this rifle
         GameObject projectile = Instantiate(projectilePrefab, firePoint.position, firePoint.rotation) as GameObject;
         Projectile projectileScript = projectile.GetComponent<Projectile>();

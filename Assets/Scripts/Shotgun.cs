@@ -15,6 +15,7 @@ public class Shotgun : Weapons
     public float projectileLifeSpan;
     public int pelletCount;
     public float spreadAngle;
+    AudioSource shotgunSound;
 
     [Header("Lists")]
     List<Quaternion> pellets;
@@ -32,6 +33,7 @@ public class Shotgun : Weapons
     public override void Start()
     {
         base.Start();
+        shotgunSound = GetComponent<AudioSource>();
     }
 
     // Update is called once per frame
@@ -42,6 +44,7 @@ public class Shotgun : Weapons
 
     public void ShotgunBlast()
     {
+        shotgunSound.Play();
         int i = 0;
         foreach(Quaternion quat in pellets)
         {
